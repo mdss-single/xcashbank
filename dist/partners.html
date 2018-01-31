@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>xCashBank</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/plugins.css">
+</head>
+<body>
+	<header class="header">
+		<div class="container rel">
+			<a href="#" class="header__burger js-header-menu"></a>
+			<a href="#" class="header__logo"><img src="i/logo.png" alt="xCashBank">CashBank</a>
+			<div class="header__contacts">
+				<a href="xmpp:cashbank@jabber.ru" class="header__contacts-item">cashbank@jabber.ru</a>
+				<a href="xmpp:cashbank@exploit.im" class="header__contacts-item">cashbank@exploit.im</a>
+				<a href="tg://resolve?domain=@cashbank_bot" class="header__contacts-item header__contacts-item--tg">@cashbank_bot</a>
+			</div>
+			<div class="header__phone">
+				<a href="tel:+78007077649" class="header__phone-number">+7 (800) 707-76-49</a>
+				<p class="header__phone-worktime">10:00 — 23:00, ежедневно</p>
+			</div>
+			<a href="#" class="header__login js-header-login"></a>
+			<div class="header__rates js-header-rates">
+				<div class="header__rates-item"><span class="header__rates-currency">USD</span> = 58.81 RUR</div>
+				<div class="header__rates-item"><span class="header__rates-currency">1 EUR</span> = 1.1809 USD</div>
+				<div class="header__rates-item"><span class="header__rates-currency">1 BTC</span> = 16 432.00 USD</div>
+				<div class="header__rates-item"><span class="header__rates-currency">1 BTC</span> = 966365.9 RUR</div>
+				<div class="header__rates-item"><span class="header__rates-currency">1 LTC</span> = 282.18 USD</div>
+				<div class="header__rates-item"><span class="header__rates-currency">1 ETH</span> = 675.79 USD</div>
+				<button class="header__rates-next"></button>
+				<span class="header__rates-info" data-tooltip="Курсы указаны без учета комиссии"></span>
+			</div>
+			<div class="header__menu">
+				<a href="#" class="header-menu__close js-header-menu-close"></a>
+				<!--
+				показываем этот блок в случае, если пользователь не авторизован. В противном случае показываем блок меню .header-menu__user
+				<div class="header-menu__contacts">
+					<a href="xmpp:cashbank@jabber.ru" class="header-menu__contacts-item">cashbank@jabber.ru</a>
+					<a href="xmpp:cashbank@exploit.im" class="header-menu__contacts-item">cashbank@exploit.im</a>
+					<a href="tg://resolve?domain=@cashbank_bot" class="header-menu__contacts-item">@cashbank_bot</a>
+				</div>
+				<div class="header-menu__phone">
+					<a href="tel:+78007077649" class="header-menu__phone-number">+7 (800) 707-76-49</a>
+					<p class="header-menu__phone-worktime">10:00 — 23:00, ежедневно</p>
+				</div>
+				-->
+				<nav class="header-menu__user">
+					<a href="#" class="header-menu__user-item header-menu__user-item--active">Мои заявки</a>
+					<a href="#" class="header-menu__user-item">Верификация карты</a>
+					<a href="#" class="header-menu__user-item">Реферальная программа</a>
+					<a href="#" class="header-menu__user-item">Промо материалы</a>
+					<a href="#" class="header-menu__user-item">Настройки</a>
+					<a href="#" class="header-menu__user-item">Выход</a>
+				</nav>
+				<nav class="header-menu__nav">
+					<a href="#" class="header-menu__nav-item">Обменник</a>
+					<a href="#" class="header-menu__nav-item">О сервисе</a>
+					<a href="#" class="header-menu__nav-item">Правила</a>
+					<a href="#" class="header-menu__nav-item">Помощь</a>
+					<a href="#" class="header-menu__nav-item">Партнерам</a>
+					<a href="#" class="header-menu__nav-item">Контакты</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+		<div class="partners">
+			<div class="container">
+				<div class="partners__wrap">
+					<div class="partners__item partners__item--referal">
+						<p class="partners__item-title">Реферальная программа для пользователей</p>
+						<p class="partners__item-slogan">экономьте и зарабатывайте</p>
+						<div class="partners__item-descr">
+							<p>Хотите зарабатывать вместе с нами? Зарегистрируйтесь у нас на сайте и Вы сможете участвовать в нашей реферальной программе и накопительной системе скидок! После регистрации Вы автоматически получаете накопительную скидку за обмен — 5%.</p>
+						</div>
+						<div class="partners__item-more"><a href="#">Подробнее о реферальной системе</a></div>
+					</div>
+					<div class="partners__item partners__item--monitoring">
+						<p class="partners__item-title">Для мониторингов</p>
+						<p class="partners__item-slogan">зарабатывайте</p>
+						<div class="partners__item-descr">
+							<p>Приглашаем к сотрудничеству мониторинги обменников. Мы очень рады новым партнерам и готовы делиться прибылью.</p>
+							<p>Зарегистрируйтесь у нас на сайте и Вы получите специальную реферальную ссылку.</p>
+						</div>
+						<div class="partners__item-more"><a href="#partnerMonitoring" class="btn btn--arrow js-modal">Подключить свой мониторинг</a></div>
+					</div>
+					<div class="partners__item partners__item--widget">
+						<p class="partners__item-title">Прием платежей для Вашего сайта</p>
+						<p class="partners__item-slogan">принимайте платежи и зарабатывайте</p>
+						<div class="partners__item-descr">
+							<p>У Вас есть свой интернет-магазин, лендинг или вы продаете какой-то товар или услугу, но у Вас нет возможности принимать оплату? С нами Вы сможете принимать платежи с разных банков и платежных систем по выгодным курсам для Ваших клиентов! С каждой оплаты проведенной через наш сервис Вы будете получать вознаграждения. Подробности можно уточнить, написав нам на почту.</p>
+						</div>
+						<div class="partners__item-more"><a href="#partnerPayments" class="btn btn--arrow js-modal">Оставить заявку на подключение</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__phone">+7 (800) 707-76-49</div>
+			<div class="footer__worktime">10:00 — 23:00, ежедневно</div>
+			<p class="footer__copyright">2017. Все права защищены</p>
+			<nav class="footer__nav">
+				<a href="#" class="footer__nav-item">Обменник</a>
+				<a href="#" class="footer__nav-item">О сервисе</a>
+				<a href="#" class="footer__nav-item">Правила</a>
+				<a href="#" class="footer__nav-item">Помощь</a>
+				<a href="#" class="footer__nav-item">Партнерам</a>
+				<a href="#" class="footer__nav-item">Контакты</a>
+			</nav>
+		</div>
+	</footer>
+	<div class="alert">
+		<div class="alert__item alert__item--error">
+			<div class="container">
+				<div class="alert__item-text">Произвольный текст алерта об ошибке</div>
+				<a href="#" class="alert__item-close js-alert-close"></a>
+			</div>
+		</div>
+		<div class="alert__item alert__item--success">
+			<div class="container">
+				<div class="alert__item-text">Произвольный текст алерта об успешной операции</div>
+				<a href="#" class="alert__item-close js-alert-close"></a>
+			</div>
+		</div>
+	</div>
+	<div class="menu">
+		<a href="#" class="menu__close js-menu-close"></a>
+		<div class="login menu__item">
+			<p class="menu__title">Войти в Личный кабинет</p>
+			<div class="menu__row">
+				<label class="menu__row-title" for="loginEmail">Введите ваш e-mail:</label>
+				<input type="text" id="loginEmail" class="input-text">
+			</div>
+			<div class="menu__row">
+				<label class="menu__row-title" for="loginPassword">Введите пароль:</label>
+				<input type="text" id="loginPassword" class="input-text">
+				<a href="#" class="login__forgot-password js-menu-forgot-password">Забыли пароль?</a>
+			</div>
+			<div class="menu__row">
+				<button class="btn btn--arrow">Войти в личный кабинет</button>
+			</div>
+			<div class="menu__row login__notice">
+				Переходя в личный кабинет, вы соглашаетесь с <a href="#">условиями и правилами сервиса</a>.
+			</div>
+			<div class="menu__row">
+				<button class="btn btn--arrow">Зарегистрироваться</button>
+			</div>
+		</div>
+		<div class="restore-password menu__item">
+			<p class="menu__title">Восстановление пароля</p>
+			<div class="restore-password__wrap">
+				<div class="menu__row">
+					<label class="menu__row-title" for="restorePassEmail">Введите ваш e-mail:</label>
+					<input type="text" id="restorePassEmail" class="input-text">
+				</div>
+				<div class="menu__row">
+					<button class="btn btn--arrow">Восстановить пароль</button>
+				</div>
+			</div>
+			<!--
+			<div class="restore-password__wrap">
+				Если все ок, то заменяем содержимое слоя change-password__wrap на вот это:
+				<p class="menu__title">Восстановление пароля</p>
+				<div class="change-password__descr">
+					<p>На указанную вами почту выслано письмо с дальнейшими инструкциями.</p>
+					<p>Для завершения регистрации перейдите по ссылки, указанной в письме.</p>
+				</div>
+			</div>
+			-->
+		</div>
+		<div class="menu-exchange menu-exchange--give menu__item">
+			<div class="menu-exchange__header">
+				<span class="exchange-header__title">Валюта отдачи:</span>
+				<div class="exchange-header__currency">
+					<input type="radio" name="mgive" id="mgive1" class="exchange-header__currency-item" checked>
+					<label for="mgive1">BTC</label>
+					<input type="radio" name="mgive" id="mgive2" class="exchange-header__currency-item">
+					<label for="mgive2">UAH</label>
+					<input type="radio" name="mgive" id="mgive3" class="exchange-header__currency-item">
+					<label for="mgive3">USD</label>
+					<input type="radio" name="mgive" id="mgive4" class="exchange-header__currency-item">
+					<label for="mgive4">EUR</label>
+				</div>
+			</div>
+			<div class="menu-exchange__items">
+				<span class="exchange-header__title">Выберите систему:</span>
+				<div class="exchange-currency__item exchange-currency__item--active" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/qiwi.png" alt=""></div>
+					<span class="exchange-currency__item-name">QIWI кошелек RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-perfect-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/yandex-money.png" alt=""></div>
+					<span class="exchange-currency__item-name">Яндекс.Деньги RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/exmo.png" alt=""></div>
+					<span class="exchange-currency__item-name">Exmo RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/alpha-bank.png" alt=""></div>
+					<span class="exchange-currency__item-name">Альфа Банк RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/alpha-bank.png" alt=""></div>
+					<span class="exchange-currency__item-name">Альфа-Банк cash-in RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/sberbank.png" alt=""></div>
+					<span class="exchange-currency__item-name">Сбербанк RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/tinkoff.png" alt=""></div>
+					<span class="exchange-currency__item-name">Тинькофф RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/vtb.png" alt=""></div>
+					<span class="exchange-currency__item-name">ВТБ24 RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/visa.png" alt=""></div>
+					<span class="exchange-currency__item-name">Другие банки РФ RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/cash-rub.png" alt=""></div>
+					<span class="exchange-currency__item-name">Наличные RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/contact.png" alt=""></div>
+					<span class="exchange-currency__item-name">Contact RUB</span>
+				</div>
+			</div>
+		</div>
+		<div class="menu-exchange menu-exchange--get menu__item">
+			<div class="menu-exchange__header">
+				<span class="exchange-header__title">Валюта получения:</span>
+				<div class="exchange-header__currency">
+					<input type="radio" name="mgive" id="mget1" class="exchange-header__currency-item" checked>
+					<label for="mget1">BTC</label>
+					<input type="radio" name="mgive" id="mget2" class="exchange-header__currency-item">
+					<label for="mget2">UAH</label>
+					<input type="radio" name="mgive" id="mget3" class="exchange-header__currency-item">
+					<label for="mget3">USD</label>
+					<input type="radio" name="mgive" id="mget4" class="exchange-header__currency-item">
+					<label for="mget4">EUR</label>
+				</div>
+			</div>
+			<div class="menu-exchange__items">
+				<span class="exchange-header__title">Выберите систему:</span>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/qiwi.png" alt=""></div>
+					<span class="exchange-currency__item-name">QIWI кошелек RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-perfect-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/yandex-money.png" alt=""></div>
+					<span class="exchange-currency__item-name">Яндекс.Деньги RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/exmo.png" alt=""></div>
+					<span class="exchange-currency__item-name">Exmo RUB</span>
+				</div>
+				<div class="exchange-currency__item exchange-currency__item--active" data-template="ajax-perfect-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/alpha-bank.png" alt=""></div>
+					<span class="exchange-currency__item-name">Альфа Банк RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/alpha-bank.png" alt=""></div>
+					<span class="exchange-currency__item-name">Альфа-Банк cash-in RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/sberbank.png" alt=""></div>
+					<span class="exchange-currency__item-name">Сбербанк RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/tinkoff.png" alt=""></div>
+					<span class="exchange-currency__item-name">Тинькофф RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/vtb.png" alt=""></div>
+					<span class="exchange-currency__item-name">ВТБ24 RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/visa.png" alt=""></div>
+					<span class="exchange-currency__item-name">Другие банки РФ RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/cash-rub.png" alt=""></div>
+					<span class="exchange-currency__item-name">Наличные RUB</span>
+				</div>
+				<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+					<div class="exchange-currency__item-icon"><img src="i/payment/contact.png" alt=""></div>
+					<span class="exchange-currency__item-name">Contact RUB</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal bid-order" id="bidOrder">
+		<p class="bid-order__title">Заявка на пополнение резерва</p>
+		<div class="bid-order__info">
+			<div class="bid-order__info-item bid-order__info-item--blue">
+				В настоящее время резерв Perfect Money USD составляет <strong>45 433 USD</strong>
+			</div>
+			<div class="bid-order__info-item">
+				Специально для Вас мы пополним резерв на необходимую сумму в ближайшее время. Наш менеджер с Вами свяжется в ближайшее время
+			</div>
+		</div>
+		<div class="bid-order__form">
+			<div class="bid-order__form-item">
+				<label for="bidOrderEmail" class="form__row-title">Ваш e-mail</label>
+				<input type="email" id="bidOrderEmail" class="input-text" placeholder="admin_star@yandex.ru">
+			</div>
+			<div class="bid-order__form-item">
+				<label for="bidOrderPhone" class="form__row-title">Ваш номер телефона</label>
+				<input type="tel" id="bidOrderPhone" class="input-text" placeholder="+7 (495) 456-67-67" data-mask="+7 (000) 000-00-00">
+			</div>
+			<div class="bid-order__form-item">
+				<label for="bidOrderSumm" class="form__row-title">Необходимая сумма резерва</label>
+				<input type="tel" id="bidOrderSumm" class="input-text" placeholder="350 000" data-mask="0000000000">
+			</div>
+			<div class="bid-order__form-item">
+				<button class="btn">Отправить запрос</button>
+			</div>
+		</div>
+	</div>
+	<div class="modal bid-success" id="bidSuccess">
+		<p class="bid-success__title">Заявка №154672343 успешно создана и принята в обработку!</p>
+		<div class="bid-success__descr">
+			<p>В течение 20 минут, после поступления ваших денег на наш счет, она будет обработана и средства будут перечислены на указанный вами счет или кошелек.</p>
+			<p>Отслеживать её статус Вы можете в своем личном кабинете. Пожалуйста, убедитесь, что вы не только нажали на кнопку “Я оплатил”, но и действительно перевели к нам средства.</p>
+			<p>По всем вопросам в случае задержки обмена, обращайтесь в техническую поддержку.</p>
+			<p>С уважением, администрация сайта!</p>
+		</div>
+		<div class="bid-success__btn">
+			<button class="btn btn--arrow">Смотреть мои заявки</button>
+		</div>
+	</div>
+	<div class="modal bid-steps" id="bidSteps">
+		<p class="bid-steps__title">Для завершения обмена следуйте инструкции</p>
+		<div class="bid-steps__wrap">
+			<div class="bid-steps__item">
+				<div class="bid-steps__item-descr">
+					<p>Сделать перевод по реквизитам</p>
+				</div>
+				<div class="bid-steps__info">
+					<div class="bid-steps__info-name">Сумма:</div>
+					<div class="bid-steps__info-value">1 Btc.</div>
+					<div class="bid-steps__info-name">Кошелек:</div>
+					<div class="bid-steps__info-value">1BoatSjksdbbsHGyhdHDJH</div>
+					<div class="bid-steps__info-name">Назначение:</div>
+					<div class="bid-steps__info-value">Личный перевод</div>
+				</div>
+			</div>
+			<div class="bid-steps__item">
+				<div class="bid-steps__item-descr">
+					<p>После оплаты, нажмите на кнопку “Я оплатил”</p>
+				</div>
+			</div>
+			<div class="bid-steps__btns">
+				<button class="btn">Я оплатил</button>
+				<a href="#" class="bid-steps__close" data-fancybox-close>Отмена</a>
+			</div>
+		</div>
+	</div>
+	<div class="modal bid-info" id="bidInfo">
+		<p class="bid-info__title">Информация по заявке: <strong>№154672343</strong></p>
+		<div class="bid-info__wrap">
+			<div class="bid-info__system">
+				<div class="bid-info__system-item">
+					<div class="bid-info-item__title">Заявка: №154672343</div>
+					<div class="bid-info-item__value">20.12.2016, 12:57</div>
+				</div>
+				<div class="bid-info__system-item">
+					<div class="bid-info-item__title">Статус:</div>
+					<div class="bid-info-item__value">Успешно выполнена</div>
+				</div>
+				<div class="bid-info__system-item">
+					<div class="bid-info-item__title">Отдаю:</div>
+					<div class="bid-info-item__money">
+						<img src="i/payment/bitcoin.png" alt="" class="bid-info-item__money-pic">
+						<div class="bid-info-item__money-descr">
+							<p class="bid-info-item__money-value">1 btc.</p>
+							<p class="bid-info-item__money-system">Bitcoin</p>
+						</div>
+					</div>
+				</div>
+				<div class="bid-info__system-item">
+					<div class="bid-info-item__title">Получаю:</div>
+					<div class="bid-info-item__money">
+						<img src="i/payment/alpha-bank.png" alt="" class="bid-info-item__money-pic">
+						<div class="bid-info-item__money-descr">
+							<p class="bid-info-item__money-value">54 276 руб.</p>
+							<p class="bid-info-item__money-system">Альфа-банк</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bid-info__descr">
+				<p class="bid-info__descr-title bid-info__descr-title--success">Ваша заявка успешно выполнена</p>
+				<!--
+				<p class="bid-info__descr-title bid-info__descr-title--wait">Ваша заявка в обработке</p>
+				<p class="bid-info__descr-title bid-info__descr-title--error">Ваша заявка отменена</p>
+				-->
+				<div class="bid-info__descr-text">
+					<p>Ваша заявка выполнена!</p>
+					<p>Благодарим за то, что воспользовались услугами нашего сервиса.</p>
+					<p>Оставьте, пожалуйста, <a href="#">отзыв</a> о работе нашего сервиса!</p>
+				</div>
+				<button class="btn btn--arrow">Скачать чек</button>
+			</div>
+		</div>
+	</div>
+	<div class="modal referal-list" id="referalList">
+		<p class="referal-list__title">Список рефералов</p>
+		<div class="referal-list__descr">
+			Описание реферальной программы: это ведущий международный обменный сервис электронных валют. Мы проводим обмен, ввод и вывод : Perfect Money, Bitcoin, BTC-e кодов, Payeer, Киви, Яндекс. Деньги, а так же осуществляем банковские переводы. Работаем с такими банками как Сбербанк, Альфа банк, ВТБ24 и Тинькофф.
+		</div>
+		<div class="referal-list__list">
+			<p class="referal-list__list-empty">У вас нет рефералов</p>
+		</div>
+	</div>
+	<div class="modal referal-history" id="referalHistory">
+		<p class="referal-history__title">История реферальных начислений</p>
+		<div class="referal-history__list">
+			<p class="referal-history__list-empty">У вас нет начислений</p>
+		</div>
+	</div>
+	<div class="modal referal-pays" id="referalPays">
+		<p class="referal-pays__title">История вознаграждений</p>
+		<div class="referal-pays__list">
+			<p class="referal-pays__list-empty">У вас нет вознаграждений</p>
+		</div>
+	</div>
+	<div class="modal partner-monitoring" id="partnerMonitoring">
+		<p class="partner-monitoring__title">Для мониторингов</p>
+		<div class="partner-monitoring__descr">
+			<p>Приглашаем к сотрудничеству мониторинги обменников. Мы очень рады новым партнерам и готовы делиться прибылью.</p>
+			<p>Зарегистрируйтесь у нас на сайте и Вы получите специальную реферальную ссылку.</p>
+			<p>Для всех мониторингов действует стандартный процент 0,5% от суммы обменов Ваших рефералов. Напишите нам на почту kassa.today@gmail.com и в уникальных случаях мы обговорим размер Вашего процента.</p>
+			<p>Экспорт курсов скачать.</p>
+		</div>
+		<div class="partner-monitoring__btn">
+			<button class="btn btn--arrow">Зарегистрироваться как мониторинг</button>
+		</div>
+	</div>
+	<div class="modal partner-payments" id="partnerPayments">
+		<p class="partner-payments__title">Прием платежей для Вашего сайта</p>
+		<div class="partner-payments__descr">
+			<p>У Вас есть свой интернет-магазин, лендинг или вы продаете какой-то товар или услугу, но у Вас нет возможности принимать оплату?</p>
+			<p>С нами Вы сможете принимать платежи с разных банков и платежных систем по выгодным курсам для Ваших клиентов! С каждой оплаты проведенной через наш сервис Вы будете получать вознаграждения.</p>
+			<p>Подробности можно уточнить, написав нам на почту</p>
+			<p><a href="mailto:xxx@mail.ru">xxx@mail.ru</a></p>
+		</div>
+		<div class="partner-payments__btn">
+			<button class="btn btn--arrow">Написать на почту</button>
+		</div>
+	</div>
+	<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

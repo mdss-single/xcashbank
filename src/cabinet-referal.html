@@ -1,0 +1,118 @@
+//= template/header.html
+		<div class="cabinet">
+			<div class="container">
+				<p class="cabinet__title">Личный кабинет</p>
+				<div class="cabinet__wrap">
+					<nav class="cabinet__nav">
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--bids">Мои заявки</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--verification">Верификация карты</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--referal cabinet__nav-item--active">Реферальная программа</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--promo">Промо материалы</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--settings">Настройки</a>
+					</nav>
+					<div class="cabinet-referal__descr">
+						<div class="cabinet-referal__descr-item">
+							<p class="cabinet-referal__descr-title">Реферальная программа</p>
+							<div class="cabinet-referal__descr-text">
+								<p>Реферальная программа - вид заработка для зарегистрированных пользователей нашего сервиса, в виде вознаграждений за обмены клиентов, которые пришли к нам по Вашей реферальной ссылке.</p>
+								<p>Делитесь партнерской ссылкой используйте рекламные материалы, привлекайте знакомых и зарабатывайте до 1% за обмены Ваших рефералов.</p>
+								<p><a href="#">Подробнее о партнерской программе</a></p>
+							</div>
+						</div>
+						<div class="cabinet-referal__descr-item cabinet-referal__descr-item--blue">
+							<p class="cabinet-referal__descr-title">Статистика переходов</p>
+							<div class="cabinet-referal__outgoing">
+								<div class="cabinet-referal__outgoing-item">
+									<div class="cabinet-referal__outgoing-number">12</div>
+									<div>Количество переходов по реферальной ссылке</div>
+								</div>
+								<div class="cabinet-referal__outgoing-item">
+									<div class="cabinet-referal__outgoing-number">6</div>
+									<div>
+										<p>Рефералов зарегистрировано</p>
+										<p><a href="#referalList" class="js-modal">Список рефералов</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cabinet-referal__link">
+						<p class="cabinet-referal__link-title">Ваша ссылка для приглашения знакомых:</p>
+						<div class="cabinet-referal__link-main">
+							<input type="text" id="referalLink" class="input-text js-input-selectText" value="http://cashbank.com/?ref_hash=56816e6e36d14c972614dc110ac2fae6">
+							<button class="btn js-clipboard" data-clipboard-target="#referalLink">Скопировать</button>
+						</div>
+						<div class="cabinet-referal__link-share">
+							<div>Вы можете быстро поделиться ссылкой в социальных сетях:</div>
+							<div class="cabinet-referal__link-items">
+								<a href="https://www.facebook.com/sharer/sharer.php?u=http://cashbank.com/?ref_hash=56816e6e36d14c972614dc110ac2fae6" class="cabinet-referal__link-item cabinet-referal__link-item--facebook">Facebook</a>
+								<a href="http://vkontakte.ru/share.php?url=http://cashbank.com/?ref_hash=56816e6e36d14c972614dc110ac2fae6" class="cabinet-referal__link-item cabinet-referal__link-item--vk">Вконтакте</a>
+								<a href="https://twitter.com/home?status=http://cashbank.com/?ref_hash=56816e6e36d14c972614dc110ac2fae6" class="cabinet-referal__link-item cabinet-referal__link-item--twitter">Twitter</a>
+								<a href="https://telegram.me/share/url?url=http://cashbank.com/?ref_hash=56816e6e36d14c972614dc110ac2fae6&text=Custom%20title" class="cabinet-referal__link-item cabinet-referal__link-item--telegram">Telegram</a>
+							</div>
+						</div>
+					</div>
+					<div class="cabinet-referal__stat">
+						<div class="cabinet-referal__stat-col">
+							<p class="cabinet-referal__stat-title">Заработанные средства:</p>
+							<div class="cabinet-referal__stat-list">
+								У вас нет начислений
+							</div>
+						</div>
+						<div class="cabinet-referal__stat-col cabinet-referal__stat-col--blue">
+							<p class="cabinet-referal__stat-title">О нашей реферальной программе</p>
+							<div class="cabinet-referal__stat-descr">
+								Делитесь партнерской ссылкой, привлекайте знакомых и зарабатывайте до 1% за обмены Ваших рефералов. <a href="#">Подробнее</a>
+							</div>
+							<p class="cabinet-referal__stat-title">Итог по заработку:</p>
+							<div class="cabinet-referal__stat-totals">
+								<div class="cabinet-referal__stat-total">
+									<span class="cabinet-referal__stat-value">0</span>
+									Рублей
+								</div>
+								<div class="cabinet-referal__stat-total">
+									<span class="cabinet-referal__stat-value">0</span>
+									Долларов
+								</div>
+								<div class="cabinet-referal__stat-total">
+									<span class="cabinet-referal__stat-value">0</span>
+									Bitcoin
+								</div>
+							</div>
+							<a href="#referalHistory" class="cabinet-referal__stat-history js-modal">История реферальных начислений</a>
+						</div>
+					</div>
+					<div class="cabinet-referal__stat">
+						<div class="cabinet-referal__stat-col">
+							<p class="cabinet-referal__stat-title">Вознаграждения:</p>
+							<div class="cabinet-referal__stat-list">
+								У вас нет вознаграждений
+							</div>
+						</div>
+						<div class="cabinet-referal__stat-col cabinet-referal__stat-col--blue">
+							<p class="cabinet-referal__stat-title">О наших вознаграждениях</p>
+							<div class="cabinet-referal__stat-descr">
+								Получайте приятные бонусы за каждый обмен, выводите деньги на любой доступный Вам счет. <a href="#">Подробнее</a>
+							</div>
+							<p class="cabinet-referal__stat-title">Итог по заработку:</p>
+							<div class="cabinet-referal__stat-totals">
+								<div class="cabinet-referal__stat-total">
+									<span class="cabinet-referal__stat-value">0</span>
+									Рублей
+								</div>
+								<div class="cabinet-referal__stat-total">
+									<span class="cabinet-referal__stat-value">0</span>
+									Долларов
+								</div>
+								<div class="cabinet-referal__stat-total">
+									<span class="cabinet-referal__stat-value">0</span>
+									Bitcoin
+								</div>
+							</div>
+							<a href="#referalPays" class="cabinet-referal__stat-history js-modal">История реферальных начислений</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+//= template/footer.html

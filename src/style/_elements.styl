@@ -1,0 +1,320 @@
+/*  <vars>  */
+$desktop = "screen and (min-width:1200px)";
+$phone-land = "screen and (min-width:768px)";
+$phone = "screen and (min-width:480px)";
+/*  </vars>  */
+
+/*  <input>  */
+.input-text
+	width 100%
+	height 46px
+	font-size 1.4rem
+	border 1px solid #0dc3ff
+	border-radius 3px
+	padding 0 16px
+	transition all .2s
+	&:focus
+		box-shadow 0 0 0 2px rgba(#47ce38, .44)
+	&--error
+		border-color #e90323
+		&:focus
+			box-shadow none
+		& + div
+			position relative
+		label&
+			animation fadeIn .5s
+			position absolute
+			z-index 100
+			width 100%
+			color #fff
+			font-size 1.3rem
+			background-color rgba(#c74545, .95)
+			border-radius 3px
+			padding 15px
+			&:before
+				display block
+				font-weight 500
+				margin-bottom 15px
+				content 'Ошибка!'
+			&:after
+				position absolute
+				top -8px
+				left 50%
+				border solid transparent
+				border-width 0 4px 8px
+				border-bottom-color rgba(#c74545, .95)
+				content ''
+				transform translateX(-50%)
+.select
+	width 100%
+	height 46px
+	font-size 1.4rem
+	border 1px solid #0dc3ff
+	border-radius 3px
+	padding 0 16px
+	transition all .2s
+	&:active
+		box-shadow 0 0 0 2px rgba(#47ce38, .44)
+.textarea
+	width 100%
+	min-height 76px
+	height 76px
+	font-size 1.4rem
+	border 1px solid #0dc3ff
+	border-radius 3px
+	padding 8px 16px
+	resize vertical
+	transition border-color .2s, box-shadow .2s
+	&:focus
+		box-shadow 0 0 0 2px rgba(#47ce38, .44)
+	&--error
+		border-color #e90323
+/*  </input>  */
+
+/*  <buttons>  */
+.btn
+	min-height 60px
+	color #fff
+	font-size 1.6rem
+	background-image linear-gradient(to right, #41cd36, #5bdd50)
+	border 0
+	border-radius 30px
+	padding 0 30px
+	transition all .2s
+	a&
+		display -webkit-inline-flex
+		display -moz-inline-flex
+		display -ms-inline-flex
+		display -o-inline-flex
+		display inline-flex
+		justify-content center
+		align-items center
+	a:hover&
+		text-decoration none
+	&:hover
+	&:focus
+		background-image linear-gradient(to right, #41cd36, #a6dd50)
+		box-shadow 7px 6px 9px rgba(#000, .25)
+	&:active
+		background-image linear-gradient(ro right, #41cd36, #a6dd50)
+		box-shadow none
+	&--arrow
+		&::after
+			flex-shrink 0
+			display inline-block
+			vertical-align -1px
+			width 16px
+			height 12px
+			background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAMAAABcOc2zAAAAP1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////9Du/pqAAAAFHRSTlMA7g7kx7kV9N3X0sGypBoKBwYgH5ruK2MAAABCSURBVAjXY4ABNmZeQQZkwMQswiOAIiLEIcLKjyLCxynCzYQiwsYlwsLEwMqIAOwiIiwYAhha8BgqDLYW02EYTgcA+RYCiKJAVS4AAAAASUVORK5CYII=')
+			margin-left 15px
+			content ''
+	&--fullwidth
+		width 100%
+	&--blue
+		height 45px
+		background-image linear-gradient(to right, #2472ef, #00a2cd)
+		border-radius 3px
+		&:hover
+		&:focus
+			background-image linear-gradient(to right, #00a2cd, #2472ef)
+			box-shadow 0 2px 9px rgba(#1ea2ff, .58)
+		&:active
+			background-image linear-gradient(to right, #00a2cd, #2472ef)
+			box-shadow none
+/*  </buttons>  */
+
+/*  <layout>  */
+.form
+	&__row
+		margin-bottom 25px
+		&:last-of-type
+			margin-bottom 0
+		&-title
+			display block
+			font-size 1.6rem
+			margin-bottom 8px
+	&__col
+		margin-bottom 25px
+		@media $desktop
+			width calc(50% - 15px)
+			margin-bottom 0
+	@media $desktop
+		&-page
+			& .form__row
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				justify-content space-between
+.no-scroll
+	overflow-y hidden
+	@media $desktop
+		padding-right 18px
+.fadeIn
+	animation fadeIn .5s
+/*  </layout>  */
+
+/*  <alert>  */
+.alert
+	display none
+	position fixed
+	top 0
+	right 0
+	bottom 0
+	left 0
+	z-index 110
+	@media $desktop
+		top 108px
+	&--active
+		display block
+	&__item
+		display none
+		height 100%
+		color #fff
+		font-weight 700
+		font-size 1.8rem
+		text-align center
+		transition all .5s
+		@media $desktop
+			height auto
+			font-size 1.4rem
+			padding 20px 0
+			margin-bottom 6px
+		&--active
+			display block
+			animation fadeIn .5s
+		&--error
+			background-color rgba(#c74545, .87)
+			@media $desktop
+				background-color #c74545
+		&--success
+			background-color rgba(#4ec544, .88)
+			@media $desktop
+				background-color #4ec544
+		.container
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			flex-direction column
+			justify-content center
+			align-items center
+			height 100%
+			padding-right 55px
+			padding-left 55px
+			@media $desktop
+				display block
+				position relative
+				text-align left
+				padding-right 80px
+				padding-left 15px
+		&-text
+			order 2
+			margin-top 35px
+			@media $desktop
+				margin-top 0
+		&-close
+			order 1
+			display block
+			width 21px
+			height 20px
+			background-image url('../i/header-menu__close.png')
+			@media $desktop
+				position absolute
+				top 50%
+				right 15px
+				width 10px
+				height 10px
+				background-size 100% auto
+				transform translateY(-50%)
+/*  </alert>  */
+
+/*  <tooltips>  */
+[data-tooltip]
+	cursor pointer
+	&:hover
+		&:before
+		&:after
+			animation fadeIn .3s
+			position absolute
+			top 50%
+			z-index 200
+			transform translateY(-50%)
+		&:before
+			left calc(100% + 20px)
+			width 160px
+			color #fff
+			font-size 1.2rem
+			line-height 1.4rem
+			background-image linear-gradient(to right, #352b67, #5a4ca0)
+			border-radius 3px
+			padding 12px 15px
+			content attr(data-tooltip)
+		&:after
+			left calc(100% + 8px)
+			width 0
+			height 0
+			border solid transparent
+			border-width 8px 14px 8px 0
+			border-right-color #352b67
+			content ''
+[data-tooltip-left]
+	cursor pointer
+	&:hover
+		&:before
+		&:after
+			animation fadeIn .3s
+			position absolute
+			top 50%
+			z-index 200
+			transform translateY(-50%)
+		&:before
+			left -200px
+			width 186px
+			color #fff
+			font-size 1.2rem
+			line-height 1.4rem
+			text-align left
+			background-image linear-gradient(to right, #352b67, #5a4ca0)
+			border-radius 3px
+			padding 12px 15px
+			content attr(data-tooltip-left)
+		&:after
+			left -14px
+			width 0
+			height 0
+			border solid transparent
+			border-width 8px 0 8px 14px
+			border-left-color #5a4ca0
+			content ''
+/*  </tooltips>  */
+
+/*  <animations>  */
+@keyframes fadeIn {
+	0% {
+		opacity 0
+	}
+	100% {
+		opacity 1
+	}
+}
+@keyframes backgroundLoad {
+	0% {
+		background-color rgba(#000, .3)
+	}
+	25% {
+		background-color rgba(#000, .4)
+	}
+	50% {
+		background-color rgba(#000, .5)
+	}
+	75% {
+		background-color rgba(#000, .4)
+	}
+	100% {
+		background-color rgba(#000, .3)
+	}
+}
+/*  </animations>  */

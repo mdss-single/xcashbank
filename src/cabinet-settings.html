@@ -1,0 +1,55 @@
+//= template/header.html
+		<div class="cabinet">
+			<div class="container">
+				<p class="cabinet__title">Личный кабинет</p>
+				<div class="cabinet__wrap">
+					<nav class="cabinet__nav">
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--bids">Мои заявки</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--verification">Верификация карты</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--referal">Реферальная программа</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--promo">Промо материалы</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--settings cabinet__nav-item--active">Настройки</a>
+					</nav>
+					<div class="cabinet-settings">
+						<p class="cabinet-settings__title">Настройки</p>
+						<div class="cabinet-settings__descr">
+							Вы можете изменить основные настройки аккаунта, и оставить данные для связи:
+						</div>
+						<div class="cabinet-settings__wrap">
+							<div class="cabinet-settings__col">
+								<p class="cabinet-settings__col-title">Основные данные:</p>
+								<div class="form__row">
+									<label for="settingsName" class="form__row-title">Как к вам обращаться?</label>
+									<input type="text" id="settingsName" class="input-text" placeholder="Андрей">
+								</div>
+								<div class="form__row">
+									<label for="settingsEmail" class="form__row-title">Ваш e-mail (вы не можете его изменить)</label>
+									<input type="text" id="settingsEmail" class="input-text" placeholder="admin_star@yandex.ru">
+								</div>
+								<div class="form__row">
+									<label for="settingsPhone" class="form__row-title">Ваш номер телефона</label>
+									<input type="text" id="settingsPhone" class="input-text" placeholder="+7 (495) 456-67-67" data-mask="+7 (000) 000-00-00">
+								</div>
+							</div>
+							<div class="cabinet-settings__col">
+								<p class="cabinet-settings__col-title">Настройки пароля:</p>
+								<div class="form__row">
+									<label for="settingsOldPassword" class="form__row-title">Старый пароль</label>
+									<input type="password" id="settingsOldPassword" class="input-text" placeholder="*******">
+								</div>
+								<div class="form__row">
+									<label for="settingsNewPassword" class="form__row-title">Новый пароль</label>
+									<input type="password" id="settingsNewPassword" class="input-text" placeholder="*******">
+								</div>
+								<div class="form__row">
+									<label for="settingsRepeatPassword" class="form__row-title">Повторите пароль</label>
+									<input type="password" id="settingsRepeatPassword" class="input-text" placeholder="*******">
+								</div>
+							</div>
+						</div>
+						<button class="btn btn--arrow cabinet-settings__btn">Сохранить настройки</button>
+					</div>
+				</div>
+			</div>
+		</div>
+//= template/footer.html

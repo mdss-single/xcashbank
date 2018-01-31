@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>xCashBank</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/plugins.css">
+</head>
+<body>
+	<header class="header">
+		<div class="container rel">
+			<a href="#" class="header__burger js-header-menu"></a>
+			<a href="#" class="header__logo"><img src="i/logo.png" alt="xCashBank">CashBank</a>
+			<div class="header__contacts">
+				<a href="xmpp:cashbank@jabber.ru" class="header__contacts-item">cashbank@jabber.ru</a>
+				<a href="xmpp:cashbank@exploit.im" class="header__contacts-item">cashbank@exploit.im</a>
+				<a href="tg://resolve?domain=@cashbank_bot" class="header__contacts-item header__contacts-item--tg">@cashbank_bot</a>
+			</div>
+			<div class="header__phone">
+				<a href="tel:+78007077649" class="header__phone-number">+7 (800) 707-76-49</a>
+				<p class="header__phone-worktime">10:00 — 23:00, ежедневно</p>
+			</div>
+			<a href="#" class="header__login js-header-login"></a>
+			<div class="header__rates js-header-rates">
+				<div class="header__rates-item"><span class="header__rates-currency">USD</span> = 58.81 RUR</div>
+				<div class="header__rates-item"><span class="header__rates-currency">1 EUR</span> = 1.1809 USD</div>
+				<div class="header__rates-item"><span class="header__rates-currency">1 BTC</span> = 16 432.00 USD</div>
+				<div class="header__rates-item"><span class="header__rates-currency">1 BTC</span> = 966365.9 RUR</div>
+				<div class="header__rates-item"><span class="header__rates-currency">1 LTC</span> = 282.18 USD</div>
+				<div class="header__rates-item"><span class="header__rates-currency">1 ETH</span> = 675.79 USD</div>
+				<button class="header__rates-next"></button>
+				<span class="header__rates-info" data-tooltip="Курсы указаны без учета комиссии"></span>
+			</div>
+			<div class="header__menu">
+				<a href="#" class="header-menu__close js-header-menu-close"></a>
+				<!--
+				показываем этот блок в случае, если пользователь не авторизован. В противном случае показываем блок меню .header-menu__user
+				<div class="header-menu__contacts">
+					<a href="xmpp:cashbank@jabber.ru" class="header-menu__contacts-item">cashbank@jabber.ru</a>
+					<a href="xmpp:cashbank@exploit.im" class="header-menu__contacts-item">cashbank@exploit.im</a>
+					<a href="tg://resolve?domain=@cashbank_bot" class="header-menu__contacts-item">@cashbank_bot</a>
+				</div>
+				<div class="header-menu__phone">
+					<a href="tel:+78007077649" class="header-menu__phone-number">+7 (800) 707-76-49</a>
+					<p class="header-menu__phone-worktime">10:00 — 23:00, ежедневно</p>
+				</div>
+				-->
+				<nav class="header-menu__user">
+					<a href="#" class="header-menu__user-item header-menu__user-item--active">Мои заявки</a>
+					<a href="#" class="header-menu__user-item">Верификация карты</a>
+					<a href="#" class="header-menu__user-item">Реферальная программа</a>
+					<a href="#" class="header-menu__user-item">Промо материалы</a>
+					<a href="#" class="header-menu__user-item">Настройки</a>
+					<a href="#" class="header-menu__user-item">Выход</a>
+				</nav>
+				<nav class="header-menu__nav">
+					<a href="#" class="header-menu__nav-item">Обменник</a>
+					<a href="#" class="header-menu__nav-item">О сервисе</a>
+					<a href="#" class="header-menu__nav-item">Правила</a>
+					<a href="#" class="header-menu__nav-item">Помощь</a>
+					<a href="#" class="header-menu__nav-item">Партнерам</a>
+					<a href="#" class="header-menu__nav-item">Контакты</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main class="main">

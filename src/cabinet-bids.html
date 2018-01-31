@@ -1,0 +1,267 @@
+//= template/header.html
+		<div class="cabinet">
+			<div class="container">
+				<p class="cabinet__title">Личный кабинет</p>
+				<div class="cabinet__wrap">
+					<nav class="cabinet__nav">
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--bids cabinet__nav-item--active">Мои заявки</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--verification">Верификация карты</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--referal">Реферальная программа</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--promo">Промо материалы</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--settings">Настройки</a>
+					</nav>
+					<div class="cabinet-bids">
+						<div class="cabinet-bids__system">
+							<div class="cabinet-bids__select">
+								<div class="cabinet-bids__select-current js-bids-select">Все время</div>
+								<div class="cabinet-bids__select-dropdown">
+									<a href="#" class="cabinet-bids__select-item cabinet-bids__select-item--active">Все время</a>
+									<a href="#" class="cabinet-bids__select-item">Сегодня</a>
+									<a href="#" class="cabinet-bids__select-item">Вчера</a>
+									<a href="#" class="cabinet-bids__select-item">Неделя</a>
+									<a href="#" class="cabinet-bids__select-item">Месяц</a>
+								</div>
+							</div>
+							<div class="cabinet-bids__sortMobile">
+								<div class="cabinet-bids__sortMobile-current js-cabinet-mobile-sort">Все</div>
+								<div class="cabinet-bids__sortMobile-dropdown">
+									<a href="#" class="cabinet-bids__sortMobile-item cabinet-bids__sortMobile-item--active">Все</a>
+									<a href="#" class="cabinet-bids__sortMobile-item">Новые</a>
+									<a href="#" class="cabinet-bids__sortMobile-item">Оплаченные</a>
+									<a href="#" class="cabinet-bids__sortMobile-item">В процессе</a>
+									<a href="#" class="cabinet-bids__sortMobile-item">Отмененные</a>
+									<a href="#" class="cabinet-bids__sortMobile-item">Выполненные</a>
+									<a href="#" class="cabinet-bids__sortMobile-item">Удаленные</a>
+								</div>
+							</div>
+							<div class="cabinet-bids__sort">
+								<a href="#" class="cabinet-bids__sort-item cabinet-bids__sort-item--active">Все</a>
+								<a href="#" class="cabinet-bids__sort-item">Новые</a>
+								<a href="#" class="cabinet-bids__sort-item">Оплаченные</a>
+								<a href="#" class="cabinet-bids__sort-item">В процессе</a>
+								<a href="#" class="cabinet-bids__sort-item">Отмененные</a>
+								<a href="#" class="cabinet-bids__sort-item">Выполненные</a>
+								<a href="#" class="cabinet-bids__sort-item">Удаленные</a>
+							</div>
+						</div>
+						<table class="cabinet-bids__list">
+							<tr>
+								<td>
+									<div class="cabinet-bids__summ">
+										<div class="cabinet-bids__summ-item">
+											<img src="i/payment/bitcoin.png" alt="" class="cabinet-bids__summ-icon">
+											<p class="cabinet-bids__summ-value">3 000 руб.</p>
+											<p class="cabinet-bids__summ-system">Bitcoin</p>
+										</div>
+										<div class="cabinet-bids__summ-item">
+											<img src="i/payment/alpha-bank.png" alt="" class="cabinet-bids__summ-icon">
+											<p class="cabinet-bids__summ-value">54 276 руб.</p>
+											<p class="cabinet-bids__summ-system">Альфа-банк</p>
+										</div>
+									</div>
+								</td>
+								<td>
+									<p class="cabinet-bids__bid-number">Заявка №1453554635</p>
+									<p class="cabinet-bids__bid-system">Альфа-банк</p>
+								</td>
+								<td>
+									<div class="cabinet-bids__status cabinet-bids__status--new">
+										<p class="cabinet-bids__status-title">Новая заявка</p>
+										<div class="cabinet-bids__status-descr">Ожидается платеж</div>
+									</div>
+								</td>
+								<td>
+									<a href="#bidInfo" class="cabinet-bids__info js-modal" data-tooltip-left="Подробная информация по вашей заявке"></a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="cabinet-bids__summ">
+										<div class="cabinet-bids__summ-item">
+											<img src="i/payment/bitcoin.png" alt="" class="cabinet-bids__summ-icon">
+											<p class="cabinet-bids__summ-value">1 btc.</p>
+											<p class="cabinet-bids__summ-system">Bitcoin</p>
+										</div>
+										<div class="cabinet-bids__summ-item">
+											<img src="i/payment/alpha-bank.png" alt="" class="cabinet-bids__summ-icon">
+											<p class="cabinet-bids__summ-value">54 276 руб.</p>
+											<p class="cabinet-bids__summ-system">Альфа-банк</p>
+										</div>
+									</div>
+								</td>
+								<td>
+									<p class="cabinet-bids__bid-number">Заявка №1453554635</p>
+									<p class="cabinet-bids__bid-system">Альфа-банк</p>
+								</td>
+								<td>
+									<div class="cabinet-bids__status cabinet-bids__status--wait">
+										<p class="cabinet-bids__status-title">Ожидает обработки</p>
+										<div class="cabinet-bids__status-descr">Ваша заявка будет обработана в течение 19 минут</div>
+									</div>
+								</td>
+								<td>
+									<a href="#bidInfo" class="cabinet-bids__info js-modal"></a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="cabinet-bids__summ">
+										<div class="cabinet-bids__summ-item">
+											<img src="i/payment/bitcoin.png" alt="" class="cabinet-bids__summ-icon">
+											<p class="cabinet-bids__summ-value">1 btc.</p>
+											<p class="cabinet-bids__summ-system">Bitcoin</p>
+										</div>
+										<div class="cabinet-bids__summ-item">
+											<img src="i/payment/alpha-bank.png" alt="" class="cabinet-bids__summ-icon">
+											<p class="cabinet-bids__summ-value">54 276 руб.</p>
+											<p class="cabinet-bids__summ-system">Альфа-банк</p>
+										</div>
+									</div>
+								</td>
+								<td>
+									<p class="cabinet-bids__bid-number">Заявка №1453554635</p>
+									<p class="cabinet-bids__bid-system">Альфа-банк</p>
+								</td>
+								<td>
+									<div class="cabinet-bids__status cabinet-bids__status--ok">
+										<p class="cabinet-bids__status-title">Заявка выполнена</p>
+										<div class="cabinet-bids__status-descr">Обмен успешно произведен</div>
+									</div>
+								</td>
+								<td>
+									<a href="#bidInfo" class="cabinet-bids__info js-modal"></a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="cabinet-bids__summ">
+										<div class="cabinet-bids__summ-item">
+											<img src="i/payment/bitcoin.png" alt="" class="cabinet-bids__summ-icon">
+											<p class="cabinet-bids__summ-value">1 btc.</p>
+											<p class="cabinet-bids__summ-system">Bitcoin</p>
+										</div>
+										<div class="cabinet-bids__summ-item">
+											<img src="i/payment/alpha-bank.png" alt="" class="cabinet-bids__summ-icon">
+											<p class="cabinet-bids__summ-value">54 276 руб.</p>
+											<p class="cabinet-bids__summ-system">Альфа-банк</p>
+										</div>
+									</div>
+								</td>
+								<td>
+									<p class="cabinet-bids__bid-number">Заявка №1453554635</p>
+									<p class="cabinet-bids__bid-system">Альфа-банк</p>
+								</td>
+								<td>
+									<div class="cabinet-bids__status cabinet-bids__status--error">
+										<p class="cabinet-bids__status-title">Заявка отклонена</p>
+										<div class="cabinet-bids__status-descr"><strong>Причина:</strong> платеж не поступил</div>
+									</div>
+								</td>
+								<td>
+									<a href="#bidInfo" class="cabinet-bids__info js-modal"></a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="cabinet-bids__summ">
+										<div class="cabinet-bids__summ-item">
+											<img src="i/payment/bitcoin.png" alt="" class="cabinet-bids__summ-icon">
+											<p class="cabinet-bids__summ-value">1 btc.</p>
+											<p class="cabinet-bids__summ-system">Bitcoin</p>
+										</div>
+										<div class="cabinet-bids__summ-item">
+											<img src="i/payment/alpha-bank.png" alt="" class="cabinet-bids__summ-icon">
+											<p class="cabinet-bids__summ-value">54 276 руб.</p>
+											<p class="cabinet-bids__summ-system">Альфа-банк</p>
+										</div>
+									</div>
+								</td>
+								<td>
+									<p class="cabinet-bids__bid-number">Заявка №1453554635</p>
+									<p class="cabinet-bids__bid-system">Альфа-банк</p>
+								</td>
+								<td>
+									<div class="cabinet-bids__status cabinet-bids__status--error">
+										<p class="cabinet-bids__status-title">Заявка отклонена</p>
+										<div class="cabinet-bids__status-descr"><strong>Причина:</strong> платеж не поступил</div>
+									</div>
+								</td>
+								<td>
+									<a href="#bidInfo" class="cabinet-bids__info js-modal"></a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="cabinet-bids__summ">
+										<div class="cabinet-bids__summ-item">
+											<img src="i/payment/bitcoin.png" alt="" class="cabinet-bids__summ-icon">
+											<p class="cabinet-bids__summ-value">1 btc.</p>
+											<p class="cabinet-bids__summ-system">Bitcoin</p>
+										</div>
+										<div class="cabinet-bids__summ-item">
+											<img src="i/payment/alpha-bank.png" alt="" class="cabinet-bids__summ-icon">
+											<p class="cabinet-bids__summ-value">54 276 руб.</p>
+											<p class="cabinet-bids__summ-system">Альфа-банк</p>
+										</div>
+									</div>
+								</td>
+								<td>
+									<p class="cabinet-bids__bid-number">Заявка №1453554635</p>
+									<p class="cabinet-bids__bid-system">Альфа-банк</p>
+								</td>
+								<td>
+									<div class="cabinet-bids__status cabinet-bids__status--error">
+										<p class="cabinet-bids__status-title">Заявка отклонена</p>
+										<div class="cabinet-bids__status-descr"><strong>Причина:</strong> платеж не поступил</div>
+									</div>
+								</td>
+								<td>
+									<a href="#bidInfo" class="cabinet-bids__info js-modal"></a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="cabinet-bids__summ">
+										<div class="cabinet-bids__summ-item">
+											<img src="i/payment/bitcoin.png" alt="" class="cabinet-bids__summ-icon">
+											<p class="cabinet-bids__summ-value">1 btc.</p>
+											<p class="cabinet-bids__summ-system">Bitcoin</p>
+										</div>
+										<div class="cabinet-bids__summ-item">
+											<img src="i/payment/alpha-bank.png" alt="" class="cabinet-bids__summ-icon">
+											<p class="cabinet-bids__summ-value">54 276 руб.</p>
+											<p class="cabinet-bids__summ-system">Альфа-банк</p>
+										</div>
+									</div>
+								</td>
+								<td>
+									<p class="cabinet-bids__bid-number">Заявка №1453554635</p>
+									<p class="cabinet-bids__bid-system">Альфа-банк</p>
+								</td>
+								<td>
+									<div class="cabinet-bids__status cabinet-bids__status--error">
+										<p class="cabinet-bids__status-title">Заявка отклонена</p>
+										<div class="cabinet-bids__status-descr"><strong>Причина:</strong> платеж не поступил</div>
+									</div>
+								</td>
+								<td>
+									<a href="#bidInfo" class="cabinet-bids__info js-modal"></a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="pagination">
+						<a href="#" class="pagination__item pagination__item--prev"></a>
+						<a href="#" class="pagination__item">1</a>
+						<a href="#" class="pagination__item">2</a>
+						<a href="#" class="pagination__item pagination__item--active">3</a>
+						<a href="#" class="pagination__item">4</a>
+						<a href="#" class="pagination__item">5</a>
+						<span class="pagination__item pagination__item--dots">...</span>
+						<a href="#" class="pagination__item">15</a>
+						<a href="#" class="pagination__item pagination__item--next"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+//= template/footer.html

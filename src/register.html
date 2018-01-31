@@ -1,0 +1,44 @@
+//= template/header.html
+		<div class="form-page">
+			<div class="container">
+				<p class="form-page__title">Регистрация</p>
+				<div class="form-page__wrap">
+					<div class="form__row">
+						<div class="form__col">
+							<label for="registerName" class="form__row-title">Пожалуйста, представьтесь</label>
+							<input type="text" id="registerName" class="input-text" placeholder="Иванов Иван Иванович">
+						</div>
+						<div class="form__col">
+							<label for="registerEmail" class="form__row-title">Введите e-mail</label>
+							<input type="email" id="registerEmail" class="input-text" placeholder="bla@bla.ru">
+						</div>
+					</div>
+					<div class="form__row">
+						<div class="form__col">
+							<label for="registerPassword" class="form__row-title">Придумайте пароль</label>
+							<input type="password" id="registerPassword" class="input-text" placeholder="**********">
+						</div>
+						<div class="form__col">
+							<label for="registerPasswordRepeat" class="form__row-title">Повторите ввод пароля</label>
+							<input type="password" id="registerPasswordRepeat" class="input-text" placeholder="**********">
+						</div>
+					</div>
+					<div class="register">
+						<div class="register__rules">
+							<input type="checkbox" id="registerRules" class="register__rules-check" checked>
+							<label for="registerRules">Я согласен с <a href="#">условиями и правилами сервиса</a></label>
+						</div>
+						<div class="register__system">
+							<div class="register__system-item">
+								<span>Поставьте галочку</span>
+								<div>%recapcha code%</div>
+							</div>
+							<div class="register__system-item">
+								<button class="btn">Зарегистрироваться</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+//= template/footer.html

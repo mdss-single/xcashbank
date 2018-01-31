@@ -1,0 +1,72 @@
+//= template/header.html
+		<div class="cabinet">
+			<div class="container">
+				<p class="cabinet__title">Личный кабинет</p>
+				<div class="cabinet__wrap">
+					<nav class="cabinet__nav">
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--bids">Мои заявки</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--verification cabinet__nav-item--active">Верификация карты</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--referal">Реферальная программа</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--promo">Промо материалы</a>
+						<a href="#" class="cabinet__nav-item cabinet__nav-item--settings">Настройки</a>
+					</nav>
+					<div class="cabinet-verification">
+						<div class="cabinet-verification__descr">
+							<div class="cabinet-verification__descr-item">
+								<p class="cabinet-verification__descr-title">Верификация карт</p>
+								<div class="cabinet-verification__descr-text">
+									<p>Для верификации необходимо сфотографировать только лицевую сторону Вашей карты на фоне нашего сайта.</p>
+									<p>Процесс верификации займет несколько минут и требуется лишь единожды на каждую новую карту.</p>
+								</div>
+							</div>
+							<div class="cabinet-verification__descr-item cabinet-verification__descr-item--blue">
+								<p class="cabinet-verification__descr-title">Требование к фотографии:</p>
+								<div class="cabinet-verification__descr-text">
+									<p>1. На фото должны читаться номер карты, имя владельца.</p>
+									<p>2. На заднем фоне (за картой) должен быть виден монитор с открытой вкладкой сайта</p>
+								</div>
+							</div>
+						</div>
+						<div class="cabinet-verification__add">
+							<p class="cabinet-verification__add-title">Добавить карту</p>
+							<div class="cabinet-verification__add-col">
+								<div class="form__row">
+									<label for="verificationBank" class="form__row-title">Выберите банк:</label>
+									<select name="" id="verificationBank" class="select">
+										<option value="">СберОнлайн</option>
+										<option value="">ВТБ</option>
+										<option value="">Россельхозбанк</option>
+									</select>
+								</div>
+								<div class="form__row">
+									<label for="verificationNumber" class="form__row-title">Введите номер карты:</label>
+									<input type="text" name="" id="verificationNumber" class="input-text" placeholder="Номер карты">
+								</div>
+							</div>
+							<div class="cabinet-verification__add-col">
+								<div class="form__row">
+									<label for="verificationName" class="form__row-title">Введите ФИО владельца карты:</label>
+									<input type="text" name="" id="verificationName" class="input-text" placeholder="123456">
+								</div>
+								<div class="form__row">
+									<label class="form__row-title">Нажмите чтобы выбрать:</label>
+									<div class="cabinet-verification__attach-wrap">
+										<input type="file" name="" id="verificationAttach" class="cabinet-verification__add-attach js-verification-attach">
+										<label for="verificationAttach">Выбрать фотографию</label>
+										<div class="cabinet-verification__attach-preview"></div>
+										<button class="btn cabinet-verification__add-btn">Отправить</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cabinet-verification__cards">
+							<p class="cabinet-verification__cards-title">Текущие карты</p>
+							<div class="cabinet-verification__cards-list">
+								У вас нет добавленных карт
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+//= template/footer.html

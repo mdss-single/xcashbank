@@ -1,0 +1,3078 @@
+/*  <vars>  */
+$desktop = "screen and (min-width:1200px)";
+$phone-land = "screen and (min-width:768px)";
+$phone = "screen and (min-width:480px)";
+/*  </vars>  */
+
+/*  <fonts>  */
+@font-face
+	font-family 'G'
+	src: url('../fonts/GothamPro-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamPro-Light.woff') format('woff'), url('../fonts/GothamPro-Light.ttf') format('truetype')
+	font-weight 300
+	font-style normal
+@font-face
+	font-family 'G'
+	src url('../fonts/GothamPro.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamPro.woff') format('woff'), url('../fonts/GothamPro.ttf') format('truetype')
+	font-weight normal
+	font-style normal
+@font-face
+	font-family 'G'
+	src url('../fonts/GothamPro-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamPro-Medium.woff') format('woff'), url('../fonts/GothamPro-Medium.ttf') format('truetype')
+	font-weight 500
+	font-style normal
+@font-face
+	font-family 'G'
+	src url('../fonts/GothamPro-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamPro-Bold.woff') format('woff'), url('../fonts/GothamPro-Bold.ttf') format('truetype')
+	font-weight 700
+	font-style normal
+/*  </fonts>  */
+
+/*  <general>  */
+body
+	display -webkit-flex
+	display -moz-flex
+	display -ms-flex
+	display -o-flex
+	display flex
+	flex-direction column
+	color #000
+	font normal 1.4rem/1.3 G
+	background-color #fff
+:-moz-placeholder
+	opacity 1
+	color currentColor
+:-ms-input-placeholder
+	opacity: 1
+	color currentColor
+a
+	color inherit
+	font inherit
+	text-decoration none
+	transition all .2s
+	&:hover
+		text-decoration underline
+.main
+	flex 1
+/*  </general>  */
+
+/*  <header>  */
+.header
+	flex-shrink 0
+	height 108px
+	&:before
+		position absolute
+		top 0
+		right 0
+		left 0
+		z-index -1
+		height 56px
+		background-image linear-gradient(to right, #2472ef, #00a2cd)
+		content ''
+	&__burger
+		position absolute
+		top 19px
+		left 15px
+		width 20px
+		height 14px
+		border solid #fff
+		border-width 2px 0
+		@media $desktop
+			display none
+		&:before
+			position absolute
+			top 50%
+			right 0
+			left 0
+			height 2px
+			background-color #fff
+			content ''
+			transform translateY(-50%)
+	&__logo
+		position absolute
+		top 14px
+		left 50%
+		color #fff
+		font-weight 700
+		font-size 2.1rem
+		text-transform uppercase
+		transform translateX(-50%)
+		@media $desktop
+			left 15px
+			transform none
+		&:hover
+			text-decoration none
+		& img
+			vertical-align -3px
+			margin-right 5px
+	&__contacts
+		display none
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content flex-start
+			position absolute
+			top 0
+			left 240px
+			color #fff
+			font-weight 700
+			line-height 52px
+			&-item
+				padding-bottom 4px// (blue height = 56px) - (line-height = 52px)
+				margin-right 25px
+				&:last-child
+					margin-right 0
+	&__phone
+		display none
+		@media $desktop
+			display block
+			position absolute
+			top 8px
+			right 110px
+			color #fff
+			text-align right
+			&-number
+				font-weight 700
+				font-size 1.8rem
+			&-worktime
+				font-size 1.2rem
+				margin 0
+	&__login
+		position absolute
+		top 0
+		right 5px
+		width 42px
+		height 56px
+		background url('../i/icons/icon-auth.svg') no-repeat center 15px / 22px auto
+		@media $desktop
+			right 15px
+			width 68px
+			border solid rgba(#fff, .39)
+			border-width 0 1px
+			&:before
+				transition all .5s
+			&:hover
+				&:before
+					animation fadeIn .5s
+					position absolute
+					top 0
+					right 0
+					bottom 0
+					left 0
+					z-index -1
+					background-image linear-gradient(rgba(#2472ef, .23), rgba(#51d9fe, .23))
+					content ''
+	&__rates
+		position relative
+		top 56px
+		overflow-x auto
+		height 52px
+		line-height 52px
+		white-space nowrap
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			align-items center
+			overflow-x initial
+			line-height 1
+			white-space pre-wrap
+			padding-right 68px
+		.flickity-viewport
+			mask-image:linear-gradient(to right, rgba(255, 255, 255, 1) 60%, rgba(0, 0, 255, .2));
+		&-item
+			font-weight 500
+			font-size 1.2rem
+			margin-right 32px
+			@media $desktop
+				&:last-of-type
+					margin-right 0
+		&-currency
+			color #0ec0ff
+		&-next
+			position absolute
+			top 13px
+			right 0
+			z-index 3
+			width 26px
+			height @width
+			background-color transparent
+			background-image url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjYgMjYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQoJPHBhdGggZmlsbD0iIzIzNzNlZSIgb3BhY2l0eT0iMS4wMCIgZD0iIE0gMTEuNTcgMC4wMCBMIDE0LjE5IDAuMDAgQyAyMC4yNiAwLjYyIDI1LjMxIDUuNjAgMjYuMDAgMTEuNjYgTCAyNi4wMCAxNC4xNCBDIDI1LjQ1IDIwLjIyIDIwLjQ0IDI1LjIzIDE0LjQyIDI2LjAwIEwgMTEuODEgMjYuMDAgQyA1Ljc0IDI1LjM5IDAuNjkgMjAuNDEgMC4wMCAxNC4zNSBMIDAuMDAgMTEuODYgQyAwLjU1IDUuNzggNS41NSAwLjc4IDExLjU3IDAuMDAgTSA4LjE3IDcuMjkgQyAxMC4wOCA5LjIxIDExLjk4IDExLjE0IDEzLjkwIDEzLjA2IEMgMTEuOTggMTQuOTYgMTAuMDggMTYuODkgOC4xNyAxOC44MCBDIDkuMTAgMTkuNzMgMTAuMDMgMjAuNjcgMTAuOTcgMjEuNjEgQyAxMy44MSAxOC43NiAxNi42NCAxNS45MCAxOS40OSAxMy4wNiBDIDE2LjY1IDEwLjIwIDEzLjgyIDcuMzQgMTAuOTcgNC40OSBDIDEwLjAzIDUuNDIgOS4xMCA2LjM2IDguMTcgNy4yOSBaIiAvPg0KPC9zdmc+DQo=')
+			border 0
+			@media $desktop
+				display none
+		&-info
+			display none
+			@media $desktop
+				display block
+				position absolute
+				top 0
+				bottom 0
+				right 21px
+				width 26px
+				background url('../i/icons/icon-info.png') no-repeat center center
+	&__menu
+		display none
+		position absolute
+		top 56px
+		right 0
+		left 0
+		z-index 100
+		color #fff
+		background-color #2274ee
+		padding 0 15px
+		box-shadow 18px 15px 27px rgba(#000, .44)
+		&--active
+			display block
+			animation fadeIn .5s
+	&-menu
+		&__close
+			position absolute
+			top -56px
+			left 0
+			width 62px
+			height 56px
+			background #2274ee url('../i/header-menu__close.png') no-repeat 17px center
+		&__contacts
+			margin 25px 0 20px
+			&-item
+				display block
+				font-weight 700
+				font-size 1.4rem
+				margin 12px 0
+		&__phone
+			margin 20px 0 32px
+			&-number
+				font-weight 700
+				font-size 1.8rem
+			&-worktime
+				font-size 1.2rem
+				margin 0
+		&__nav
+			margin 30px 0
+			&-item
+				display block
+				font-weight 700
+				font-size 1.8rem
+				margin 15px 0
+		&__user
+			margin 25px 0
+			&-item
+				display block
+				font-size 1.8rem
+				padding 5px 0
+				margin 10px 0
+				&--active
+					font-weight 700
+/*  </header>  */
+
+/*  <exchange>  */
+.exchange
+	background-color #edf5fc
+	@media $desktop
+		padding-bottom 42px
+		&__wrap
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			align-items flex-start
+			align-items stretch
+			position relative
+			border-radius 0 0 10px 10px
+			padding-top 87px
+			margin 0 -47px 0 -50px
+			&:before
+				position absolute
+				top 87px
+				right 0
+				bottom 0
+				left 0
+				border-radius 0 0 10px 10px
+				box-shadow 0 17px 9px rgba(#4a6a81, .1)
+				content ''
+	&__col
+		@media $desktop
+			position relative
+			background-color #fff
+		&--give
+			padding 20px 0 45px
+			@media $desktop
+				width 349px
+				border-radius 0 0 0 10px
+				padding 0
+		&--get
+			@media $desktop
+				flex 1
+				border solid #e6e6e6
+				border-width 0 1px
+		&--info
+			background-color #fff
+			padding 15px 15px 0
+			margin 28px -15px 0
+			@media $desktop
+				width 410px
+				border-radius 0 0 10px
+				padding 20px 40px
+				margin 0
+	&-col
+		&__header
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			align-items center
+			margin-bottom 16px
+			@media $desktop
+				justify-content flex-start
+				position absolute
+				top -67px
+				right 0
+				left 0
+				height 67px
+				^[0]__col--give &
+					background-color #f4f9fe
+					border-radius 10px 0 0
+					padding-left 50px
+				^[0]__col--get &
+					background-color #f4f9fe
+					border-radius 0 10px 0 0
+					border-left 1px solid #e6e6e6
+					padding 0 28px 0 22px
+					margin-left -1px
+				^[0]__col--info &
+					padding-left 40px
+		&__summ
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between;
+			align-items center
+			position relative
+			height 58px
+			background-color #fff
+			border 1px solid #0dc3ff
+			border-radius 3px
+			padding 0 8px 0 10px
+			@media $desktop
+				padding 0 8px 0 15px
+				margin-bottom 22px
+				^[0]__col--give &
+					width 314px
+					margin-right -1px
+					margin-left auto
+				^[0]__col--get &
+					width 322px
+					margin-left -1px
+			&:before
+				position absolute
+				top 50%
+				right 46px
+				z-index 1
+				color #b2b2b2
+				font-size 1.1rem
+				content attr(data-text)
+				transform translateY(-50%)
+				@media $desktop
+					right 84px
+		&__mobile
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			align-items center
+			position relative
+			height 58px
+			background-color #fff
+			border 1px solid #0dc3ff
+			border-radius 3px
+			padding 0 8px 0 15px
+			margin-top 11px
+			@media $desktop
+				display none
+			&:before
+				position absolute
+				top 50%
+				right 16px
+				width 13px
+				height 7px
+				background-image url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTMgNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCgk8cGF0aCBmaWxsPSIjNTI1MjUyIiBvcGFjaXR5PSIwLjQ2IiBkPSIgTSAwLjAwIDAuMDAgTCAwLjYwIDAuMDAgQyAwLjQ1IDAuMjUgMC4xNSAwLjc1IDAuMDAgMS4wMCBMIDAuMDAgMC4wMCBaIiAvPg0KCTxwYXRoIGZpbGw9IiM1MjUyNTIiIG9wYWNpdHk9IjAuNDYiIGQ9IiBNIDEyLjAwIDAuMDAgTCAxMy4wMCAwLjAwIEwgMTMuMDAgMC41NyBDIDEyLjc1IDAuNDMgMTIuMjUgMC4xNCAxMi4wMCAwLjAwIFoiIC8+DQoJPHBhdGggZmlsbD0iI2E4YThhOCIgb3BhY2l0eT0iMC45NCIgZD0iIE0gMC42MCAwLjAwIEwgMS40MCAwLjAwIEMgMy4wMCAxLjM2IDQuNTggMi43NiA2LjE2IDQuMTUgQyA4LjI5IDMuNjMgOS43MSAxLjI1IDExLjU3IDAuMDAgTCAxMi4wMCAwLjAwIEMgMTIuMjUgMC4xNCAxMi43NSAwLjQzIDEzLjAwIDAuNTcgTCAxMy4wMCAxLjYwIEMgMTAuOTEgMy40MSA4Ljc5IDUuMTkgNi43MCA3LjAwIEwgNi4yOCA3LjAwIEMgNC4yMSA1LjE2IDIuMDYgMy40MiAwLjAwIDEuNTcgTCAwLjAwIDEuMDAgQyAwLjE1IDAuNzUgMC40NSAwLjI1IDAuNjAgMC4wMCBaIiAvPg0KPC9zdmc+DQo=')
+				content ''
+				transform translateY(-50%)
+			&-icon
+				flex-shrink 0
+				max-height 35px
+			&-name
+				flex 1
+				font-size 1.6rem
+				margin-left 12px
+		&__currency
+			display none
+			@media $desktop
+				display block
+				margin-bottom 25px
+	&-header
+		&__title
+			font-weight 500
+			font-size 1.6rem
+			@media $desktop
+				margin-top -3px
+				margin-right 20px
+		&__currency
+			@media $desktop
+				flex 1
+			&-item
+				position absolute
+				left -9999px
+				& + label
+					color #9f9f9f
+					font-weight 500
+					font-size 1.2rem
+					line-height 2.6rem
+					border-radius 13px
+					padding 6px 10px
+					cursor pointer
+					transition all .2s
+				&:checked + label
+					color #fff
+					background-color #0dc3ff
+					cursor default
+		&__reserv
+			display none
+			@media $desktop
+				display block
+		&__icons
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			align-items center
+			&-item
+				&:last-child
+					background url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNyAxMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCgk8cGF0aCBmaWxsPSIjOGM4YzhjIiBvcGFjaXR5PSIxLjAwIiBkPSIgTSAwLjAwIDAuMDAgTCAxLjkyIDAuMDAgTCAwLjg4IDAuNTIgQyAzLjEzIDEuNDYgNC45MiAzLjE0IDcuMDAgNC4zOCBMIDcuMDAgNS4yMyBDIDUuMDEgNy4wNyAyLjc5IDguNjYgMC40MiAxMC4wMCBMIDAuMDAgMTAuMDAgTCAwLjAwIDkuNjIgQyAxLjM2IDcuODQgMy4wOSA2LjQyIDQuNzkgNC45OSBDIDMuMTIgMy41OSAxLjQ3IDIuMTYgMC4wMCAwLjU2IEwgMC4wMCAwLjAwIFoiIC8+DQoJPHBhdGggZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMS4wMCIgZD0iIE0gMS45MiAwLjAwIEwgNy4wMCAwLjAwIEwgNy4wMCA0LjM4IEMgNC45MiAzLjE0IDMuMTMgMS40NiAwLjg4IDAuNTIgTCAxLjkyIDAuMDAgWiIgLz4NCgk8cGF0aCBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIxLjAwIiBkPSIgTSAwLjAwIDAuNTYgQyAxLjQ3IDIuMTYgMy4xMiAzLjU5IDQuNzkgNC45OSBDIDMuMDkgNi40MiAxLjM2IDcuODQgMC4wMCA5LjYyIEwgMC4wMCAwLjU2IFoiIC8+DQoJPHBhdGggZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMS4wMCIgZD0iIE0gMC40MiAxMC4wMCBDIDIuNzkgOC42NiA1LjAxIDcuMDcgNy4wMCA1LjIzIEwgNy4wMCAxMC4wMCBMIDAuNDIgMTAuMDAgWiIgLz4NCjwvc3ZnPg0K') no-repeat 18px center / 7px auto
+					padding-left 40px
+				img
+					max-height 35px
+	&-summ
+		&__value
+			flex 1
+			z-index 2
+			height 56px
+			font-weight 500
+			font-size 1.6rem
+			background-color transparent
+			border 0
+			span&
+				line-height 56px
+		&__request
+			color #0dc3ff
+			font-size 1.2rem
+			margin-right 17px
+		&__icon
+			flex-shrink 0
+			max-height 35px
+		&__currency
+			display none
+			@media $desktop
+				display block
+				font-weight 500
+				font-size 1.2rem
+				margin-left 10px
+	&-wallet
+		margin-top 25px
+		&__empty
+			animation backgroundLoad 3s infinite
+			position relative
+			height 30px
+		&__title
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			align-items center
+			font-size 1.6rem
+			margin-bottom 8px
+			&-descr
+				color #b2b2b2
+				font-size 1.4rem
+		&__input
+			position relative
+		&__icon
+			position absolute
+			top 50%
+			right 14px
+			transform translateY(-50%)
+	&-info
+		&__summ
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			background url('../i/exchange-total.png') no-repeat center 16px
+			&-title
+				color #a1a1a1
+				font-size 1.2rem
+				margin 0
+			&-value
+				font-weight 500
+				font-size 3rem
+				margin 0
+			&-currency
+				display none
+		&__detail
+			font-size 1.2rem
+			@media $desktop
+				position relative
+			& > span:nth-child(2)
+				display block
+				@media $desktop
+					display inline
+		&__btn
+			.btn
+				display block
+				width 100%
+				@media $desktop
+					width auto
+					padding 0 50px
+					margin 40px auto 0
+	&-currency
+		&__item
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			align-items center
+			position relative
+			border-bottom 1px solid #e6e6e6
+			padding 4px 20px 4px 50px
+			cursor pointer
+			transition all .2s
+			@media $desktop
+				^[0]__col--give &
+					padding 4px 10px 4px 50px
+				^[0]__col--get &
+					padding 4px 30px 4px 18px
+				&:last-child
+					border-bottom 0
+			&:hover
+			&--active
+				color #fff
+				&:before
+					animation fadeIn .2s
+					position absolute
+					top 0
+					right 0
+					bottom 0
+					left 0
+					z-index 0
+					background-image linear-gradient(to right, #352b67, #5a4ca0)
+					content ''
+				.menu-exchange &
+					position relative
+					&:before
+						position absolute
+						top 50%
+						right 10px
+						width 20px
+						height @width
+						background-image url('../i/icons/icon-ok.svg')
+						content ''
+						transform translateY(-50%)
+				& ^[-1]-icon
+					position relative
+					overflow hidden
+					background-color #fff
+					border-radius 50%
+				& ^[-1]-value
+				& ^[-1]-name
+				& ^[-1]-reserv
+					position relative
+					color #fff
+			.menu-exchange &
+				padding 4px 32px 4px 25px
+				margin 0 -15px 0 -25px
+			&-icon
+				flex 0 0 35px
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				justify-content center
+				align-items center
+				width 35px
+				height 35px
+				text-align center
+				margin-right 15px
+			&-value
+				min-width 45px
+				color #999
+				^[0]__col--get &
+					min-width 80px
+			&-name
+				flex 1
+			@media $desktop
+				&-reserv
+					color #999
+/*  </exchange>  */
+
+/*  <homepage-about-us>  */
+.homepage-about-us
+	padding 50px 0 45px
+	@media $desktop
+		padding 40px 0
+		&__info
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			margin-top 50px
+	&__title
+		font-weight 500
+		font-size 2.4rem
+		margin 0
+	&__item
+		margin-top 25px
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			align-items center
+			margin-top 0
+			&:first-child
+				& ^[1]-title
+					width 115px
+			&:last-child
+				& ^[1]-title
+					width 80px
+		&-title
+			display block
+			font-size 1.2rem
+			@media $desktop
+				width 70px
+		&-value
+			font-weight 500
+			font-size 3.3rem
+		&-currency
+			font-weight 700
+			font-size 1.4rem
+/*  </homepage-about-us>  */
+
+/*  <homepage-latest>  */
+.homepage-latest
+	background-color #eaf3fb
+	padding 30px 0
+	@media $desktop
+		padding 82px 0 32px
+		.container
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+.latest-actions
+	@media $desktop
+		flex 1
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		flex-wrap wrap
+		justify-content space-between
+		position relative
+		margin-right 30px
+	&__title
+		font-weight 500
+		font-size 2.4rem
+		margin 0 0 20px
+		@media $desktop
+			position absolute
+			top -50px
+			left 0
+	&__item
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		flex-wrap wrap
+		justify-content space-between
+		background-color #fff
+		border-radius 3px
+		padding 22px 25px
+		margin 28px 0
+		box-shadow 0 10px 21px rgba(#4a6a81, .1)
+		@media $desktop
+			width calc(50% - 15px)
+			padding 28px 50px 20px
+			margin 0 0 28px
+		&-date
+			width 100%
+			font-size 1.2rem
+			margin 0 0 20px
+		&-info
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			align-items center
+			img
+				flex-shrink 0
+				margin-right 8px
+		&-value
+			font-weight 700
+			font-size 1.4rem
+			margin 0
+			span
+				display block
+		&-delimeter
+			width 38px
+			height 38px
+			background-image url('../i/exchange-total.png')
+.latest-reviews
+	position relative
+	background-color #fff
+	border-radius 3px
+	padding 20px 20px 30px 30px
+	margin-top 82px
+	box-shadow 0 10px 21px rgba(#4a6a81, .1)
+	@media $desktop
+		width 360px
+		margin-top 0
+		margin-bottom 28px
+	&__title
+		position absolute
+		top -50px
+		left 0
+		font-weight 500
+		font-size 2.4rem
+		margin 0
+		@media $desktop
+			position absolute
+			top -45px
+			left 0
+	&__list
+		margin-bottom 70px
+		.flickity-page-dots
+			bottom -35px
+			text-align left
+			.dot
+				opacity 1
+				background #000
+				margin 0 5px 0 0
+				&.is-selected
+					background-color #0dc3ff
+	&__item
+		width 100%
+	&__info
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		justify-content space-between
+		align-items center
+		margin-bottom 15px
+	&__author
+		font-weight 700
+		font-size 1.6rem
+		margin 0
+	&__date
+		font-size 1.2rem
+	&__text
+		line-height 2.4rem
+	&__add
+		color #0cc5ff
+		font-weight 700
+		font-size 1.4rem
+/*  </homepage-latest>  */
+
+/*  <why-us>  */
+.why-us
+	padding 30px 0
+	@media $desktop
+		padding 25px 0 50px
+	&__title
+		font-weight 500
+		font-size 2.4rem
+		margin 0 0 50px
+		@media $desktop
+			text-align center
+	&__items
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			align-items flex-start
+	&__item
+		padding-left 90px
+		margin-top 50px
+		@media $desktop
+			margin-top 0
+			&:first-child
+				margin-right 50px
+			&:last-child
+				margin-left 40px
+		&--garantee
+			background url('../i/why-us__garantee.png') no-repeat 0 center
+		&--support
+			background url('../i/why-us__support.png') no-repeat 0 center
+		&--security
+			background url('../i/why-us__security.png') no-repeat 3px center
+		&-title
+			font-weight 700
+			font-size 1.6rem
+			text-transform uppercase
+			margin 0 0 10px
+		&-descr
+			line-height 2.4rem
+/*  </why-us>  */
+
+/*  <footer>  */
+.footer
+	color #fff
+	background-image linear-gradient(to right, #2472ef, #00a2cd)
+	padding 34px 0 20px
+	@media $desktop
+		padding 0
+		.container
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			align-items center
+			height 72px
+	&__phone
+		font-weight 700
+		font-size 1.8rem
+		margin-bottom 10px
+		@media $desktop
+			display none
+	&__worktime
+		font-size 1.2rem
+		margin-bottom 30px
+		@media $desktop
+			display none
+	&__copyright
+		font-size 1.4rem
+	&__nav
+		display none
+		@media $desktop
+			display block
+			&-item
+				margin-left 26px
+/*  </footer>  */
+
+/*  <menu>  */
+.menu
+	position fixed
+	top 0
+	right 0
+	bottom 0
+	overflow-y auto
+	width 310px
+	z-index 108
+	background-color #fff
+	padding 85px 15px 0 25px
+	transform translateX(100%)
+	transition all .5s
+	@media $desktop
+		width 42%
+		padding 138px 0 0 45px
+	&--active
+		transform translateX(0)
+	&__cover
+		position fixed
+		top 0
+		right 0
+		bottom 0
+		left 0
+		z-index 107
+		background-color rgba(#151e29, .85)
+	&__close
+		position absolute
+		top 38px
+		left 25px
+		width 28px
+		height @width
+		@media $desktop
+			top 62px
+			left 45px
+			width 22px
+		&:hover
+			&:before
+			&:after
+				background-color #00a1cd
+		&:before
+		&:after
+			position absolute
+			top calc(50% - 1px)
+			left -5px
+			width 38px // квадратный корень из двух помноженный на ширину (28 пикселей)
+			height 4px
+			background-color #000
+			content ''
+			transition all .2s
+			@media $desktop
+				left -3px
+				width 30px
+				height 3px
+		&:before
+			transform rotate(45deg)
+		&:after
+			transform rotate(-45deg)
+	&__title
+		font-size 2.4rem
+		margin 0 0 30px
+	&__row
+		margin 30px 0
+		&-title
+			display block
+			font-size 1.6rem
+			margin-bottom 7px
+	&__item
+		display none
+		&--active
+			display block
+			animation fadeIn .5s
+			@media $desktop
+				width 324px
+.login
+	margin-bottom 50px
+	&__forgot-password
+		display inline-block
+		color #098eeb
+		font-size 1.6rem
+		margin-top 8px
+	.btn
+		text-align left
+		padding 0 25px
+		@media $desktop
+			text-align center
+	.btn--arrow
+		position relative
+		width 100%
+		&:after
+			position absolute
+			top 50%
+			right 20px
+			transform translateY(-50%)
+			@media $desktop
+				position static
+				transform none
+	&__notice
+		color #8f8f8f
+.restore-password
+	.btn--arrow
+		position relative
+		width 100%
+		text-align left
+		@media $desktop
+			text-align center
+		&:after
+			position absolute
+			top 50%
+			right 20px
+			transform translateY(-50%)
+			@media $desktop
+				position static
+				transform none
+	&__descr
+		font-size 1.6rem
+		line-height 2.4rem
+.menu-exchange
+	margin 30px 0
+	&__header
+		margin 30px 0 40px
+	.exchange-header__title
+		display block
+		margin-bottom 8px
+	.exchange-header__currency
+		margin-left -10px
+	.exchange-header__currency-item + label
+		margin 0 10px 0 0
+/*  </menu>  */
+
+/*  <modals>  */
+.modal
+	display none
+	max-width 90%
+	background-color #fff
+	border-radius 3px
+	.fancybox-slide &
+		overflow initial
+		margin 104px 0 44px
+	.fancybox-close-small
+		top -58px
+		right auto
+		left 50%
+		width 28px
+		height @width
+		transform translateX(-50%)
+		&:before
+		&:after
+			position absolute
+			top calc(50% - 1px)
+			left -5px
+			right auto
+			width 38px
+			height 4px
+			font inherit
+			background-color #fff
+			border-radius 0
+			content ''
+		&:before
+			transform rotate(45deg)
+		&:after
+			transform rotate(-45deg)
+.bid-order
+	@media $desktop
+		width 750px
+	.fancybox-slide &
+		padding 35px 14px 40px
+		@media $desktop
+			padding 35px 40px 56px
+	&__title
+		font-weight 700
+		font-size 2.2rem
+		text-align center
+		margin 0 0 16px
+		@media $desktop
+			font-size 3rem
+			margin-bottom 30px
+	&__info
+		margin-bottom 30px
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			align-items center
+			margin-bottom 15px
+		&-item
+			font-weight 300
+			font-size 1.6rem
+			line-height 2.4rem
+			margin-bottom 25px
+			@media $desktop
+				width calc(50% - 15px)
+				margin-bottom 0
+			&--blue
+				font-weight 400
+				font-size 1.4rem
+				text-align center
+				background-color #e6faff
+				border-radius 3px
+				padding 16px 20px
+				strong
+					display block
+	&__form
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			flex-wrap wrap
+			justify-content space-between
+			align-items flex-end
+		&-item
+			margin-bottom 30px
+			@media $desktop
+				width calc(50% - 15px)
+				margin 30px 0 0
+			&:last-child
+				margin-bottom 0
+			.btn
+				width 100%
+				@media $desktop
+					width auto
+					padding 0 40px
+					margin-bottom -5px
+.bid-success
+	background url('../i/icons/icon-success.svg') no-repeat center 34px / 68px auto
+	@media $desktop
+		width 750px
+	.fancybox-slide &
+		padding 113px 25px 42px
+		@media $desktop
+			padding 134px 46px 60px
+	&__title
+		font-weight 700
+		font-size 1.8rem
+		text-align center
+		margin 0 0 20px
+		@media $desktop
+			font-size 3rem
+			margin 0 0 40px
+	&__descr
+		font-weight 300
+		font-size 1.6rem
+		line-height 2.4rem
+	&__btn
+		margin-top 40px
+		@media $desktop
+			text-align center
+			margin-top 60px
+		.btn
+			width 100%
+			height 55px
+			padding 0 20px
+			@media $desktop
+				width auto
+				padding 0 50px
+.bid-steps
+	@media $desktop
+		width 618px
+	.fancybox-slide &
+		padding 54px 25px 45px
+		@media $desktop
+			padding 34px 90px 88px
+	&__title
+		font-weight 700
+		font-size 2.4rem
+		text-align center
+		margin 0 0 25px
+		@media $desktop
+			font-size 3rem
+			margin 0 0 60px
+	&__wrap
+		counter-reset bid-steps
+		@media $desktop
+			position relative
+			&:before
+				position absolute
+				top 37px
+				left -44px
+				width 125px
+				height 299px
+				background-image url('../i/bid-steps__line.png')
+				content ''
+	&__item
+		position relative
+		padding-top 54px
+		margin-top 24px
+		@media $desktop
+			padding-top 0
+			padding-left 74px
+			margin-top 38px
+		&:before
+			position absolute
+			top 0
+			left 50%
+			width 45px
+			height 39px
+			color #fff
+			font-weight 700
+			font-size 1.6rem
+			line-height @height
+			text-align center
+			background-color #01a0ce
+			border-radius 3px
+			counter-increment bid-steps
+			content counter(bid-steps)
+			transform translateX(-50%)
+			@media $desktop
+				top -8px
+				left 0
+				transform none
+		&-descr
+			font-weight 300
+			font-size 1.6rem
+			line-height 2.4rem
+			text-align center
+			@media $desktop
+				text-align left
+			p
+				margin 0
+	&__info
+		text-align center
+		background-color #e6faff
+		padding 20px 0
+		margin-top 10px
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			flex-wrap wrap
+			text-align left
+			border-radius 3px
+			padding 20px 25px
+			margin-top 16px
+			&-name
+				width 30%
+		&-value
+			font-weight 700
+			margin-bottom 20px
+			@media $desktop
+				width 70%
+			&:last-of-type
+				margin-bottom 0
+	&__btns
+		margin-top 10px
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content flex-start
+			align-items center
+			margin-top 50px
+			margin-left 74px
+		.btn
+			width 100%
+			@media $desktop
+				width auto
+				margin-right 35px
+	&__close
+		display block
+		color #02a0ce
+		font-weight 700
+		font-size 1.6rem
+		text-decoration underline
+		text-align center
+		padding 5px 0
+		margin-top 10px
+		@media $desktop
+			display block
+			padding 0
+			margin-top 0
+		a:hover&
+			text-decoration none
+.bid-info
+	@media $desktop
+		width 750px
+	.fancybox-slide &
+		padding 30px 25px 50px
+		@media $desktop
+			padding 40px 75px 60px
+	&__title
+		font-size 1.8rem
+		text-align center
+		margin 0 0 45px
+		strong
+			display block
+	&__wrap
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+	&__system
+		margin 40px 0 30px
+		@media $desktop
+			width 250px
+			margin 0
+		&-item
+			margin 20px 0
+			@media $desktop
+				margin 0 0 40px
+				&:last-child
+					margin 0
+	&-item
+		&__title
+			font-weight 700
+			font-size 2rem
+			margin-bottom 5px
+		&__money
+			position relative
+			padding-left 36px
+			&-pic
+				position absolute
+				top 50%
+				left 0
+				transform translateY(-50%)
+			&-value
+				font-weight 600
+				font-size 1.8rem
+				line-height 1
+				margin 0
+			&-system
+				color #646464
+				font-size 1.2rem
+				margin 0
+	&__descr
+		@media $desktop
+			width 330px
+			margin-top -10px
+		&-title
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			align-items center
+			position relative
+			min-height 64px
+			font-weight 700
+			font-size 1.8rem
+			padding-left 84px
+			margin 0 0 20px
+			&--success
+				background url('../i/icons/icon-success.svg') no-repeat 0 center / 56px auto
+			&--wait
+				background url('../i/icons/icon-wait.svg') no-repeat 0 center / 60px auto
+			&--error
+				background url('../i/icons/icon-error.svg') no-repeat 0 center / 62px auto
+		&-text
+			font-weight 300
+			font-size 1.6rem
+			line-height 2.4rem
+			a
+				color #0095fe
+		.btn
+			width 100%
+			margin-top 20px
+			@media $desktop
+				width auto
+				margin-top 50px
+.referal-list
+	@media $desktop
+		width 615px
+	.fancybox-slide &
+		text-align center
+		padding 55px 50px 45px
+		@media $desktop
+			padding 70px 60px 45px
+	&__title
+		font-size 2.4rem
+		margin 0 0 30px
+		@media $desktop
+			margin-bottom 50px
+	&__descr
+		font-size 1.6rem
+		line-height 2.4rem
+	&__list
+		font-size 1.6rem
+		&-empty
+			margin 95px 0
+.referal-history
+	@media $desktop
+		width 615px
+	.fancybox-slide &
+		text-align center
+		background #fff url('../i/referal-list__bg.png') no-repeat center 55px
+		padding 165px 50px 45px
+	&__title
+		font-size 2.4rem
+		margin 0 0 25px
+	&__list
+		font-size 1.6rem
+		&-empty
+			margin 95px 0
+.referal-pays
+	@media $desktop
+		width 615px
+	.fancybox-slide &
+		text-align center
+		background #fff url('../i/referal-pays__bg.png') no-repeat center 55px
+		padding 165px 50px 45px
+	&__title
+		font-size 2.4rem
+		margin 0 0 25px
+	&__list
+		font-size 1.6rem
+		&-empty
+			margin 95px 0
+.partner-monitoring
+	@media $desktop
+		width 750px
+	.fancybox-slide &
+		text-align center
+		background #fff url('../i/partners-monitoring.png') no-repeat center 34px
+		padding 165px 25px 45px
+		@media $desktop
+			background-position center 50px
+			padding 170px 100px 76px
+	&__title
+		font-weight 700
+		font-size 2.4rem
+		margin 0 0 25px
+		@media $desktop
+			font-size 3rem
+			margin 0 0 35px
+	&__descr
+		font-weight 300
+		font-size 1.6rem
+		line-height 2.4rem
+		margin-bottom 30px
+		a
+			color #00b3f0
+	&__btn
+		.btn
+			@media $desktop
+				padding 0 55px
+		.btn--arrow
+			&:after
+				display none
+				@media $desktop
+					display inline-block
+.partner-payments
+	@media $desktop
+		width 750px
+	.fancybox-slide &
+		text-align center
+		background #fff url('../i/partners-widget.png') no-repeat center 34px
+		padding 165px 25px 45px
+		@media $desktop
+			background-position center 45px
+			padding 170px 100px 76px
+	&__title
+		font-weight 700
+		font-size 2.4rem
+		margin 0 0 25px
+		@media $desktop
+			font-size 3rem
+			margin 0 0 35px
+	&__descr
+		font-weight 300
+		font-size 1.6rem
+		line-height 2.4rem
+		margin-bottom 30px
+		a
+			color #00b3f0
+	&__btn
+		.btn
+			@media $desktop
+				padding 0 55px
+		.btn--arrow
+			&:after
+				display none
+				@media $desktop
+					display inline-block
+/*  </modals>  */
+
+/*  <cabinet>  */
+.cabinet
+	min-height 100%
+	background-color #eef5fc
+	padding 20px 0 0
+	@media $desktop
+		padding 25px 0 50px
+	&__title
+		font-weight 500
+		font-size 1.8rem
+		text-align center
+		margin 0 0 20px
+		@media $desktop
+			font-size 2.4rem
+	&__wrap
+		background-color #fff
+		padding 0 15px
+		margin 25px -15px 0
+		@media $desktop
+			border-radius 0 0 10px 10px
+			padding 0 0 10px
+			margin 0 -50px
+			box-shadow 0 17px 9px rgba(#4a6a81, .1)
+	&__nav
+		padding 20px 0 25px
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			padding 0
+		&-item
+			display none
+			@media $desktop
+				flex 1 0 auto
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				justify-content center
+				align-items center
+				position relative
+				height 70px
+				text-align center
+				background-color #f9fcfe
+				border-right 1px solid #e6e6e6
+				&--bids
+					&:before
+						width 24px
+						height 20px
+						background-image url('../i/icons/icon-bid-nav-bids.png')
+				&--verification
+					&:before
+						width 20px
+						height 24px
+						background-image url('../i/icons/icon-bid-nav-verification.png')
+				&--referal
+					&:before
+						width 24px
+						height 24px
+						background-image url('../i/icons/icon-bid-nav-referal.png')
+				&--promo
+					&:before
+						width 22px
+						height 22px
+						background-image url('../i/icons/icon-bid-nav-promo.png')
+				&--settings
+					&:before
+						width 24px
+						height 24px
+						background-image url('../i/icons/icon-bid-nav-settings.png')
+				&:last-child
+					border-right 0
+				&:hover
+					text-decoration none
+					&:after
+						width 100%
+				&:before
+					display inline-block
+					margin-right 12px
+					content ''
+				&:after
+					position absolute
+					bottom 0
+					width 0
+					height 1px
+					background-color #0e90da
+					content ''
+					transition all .2s
+			&--active
+				display block
+				font-weight 300
+				font-size 3rem
+				text-align center
+				pointer-events none
+				@media $desktop
+					display inherit
+					font-size 1.4rem
+					font-weight 500
+					pointer-events auto
+					&:after
+						position absolute
+						bottom 0
+						width 100%
+						height 1px
+						background-color #0e90da
+						content ''
+	&-bids
+		&__system
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			border-bottom 1px solid #ececec
+			padding-bottom 14px
+			@media $desktop
+				justify-content flex-start
+				padding-bottom 0
+				margin-top 30px
+		&__select
+			position relative
+			@media $desktop
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				align-items center
+				width 175px
+				margin 0 40px 0 50px
+			&-current
+				display inline
+				position relative
+				white-space nowrap
+				padding-right 15px
+				cursor pointer
+				&:after
+					position absolute
+					top 50%
+					right 0
+					width 7px
+					height @width
+					border solid #000
+					border-width 0 2px 2px 0
+					content ''
+					transform rotate(45deg) translateY(calc(-50% - 3px))
+			&-item
+				display block
+				padding 10px 18px
+				transition all .2s
+				&--active
+				&:hover
+					text-decoration none
+					background-color #e9f3fd
+				&--active
+					pointer-events none
+			&-dropdown
+				display none
+				&--active
+					display block
+					animation fadeIn .5s
+					position absolute
+					top calc(100% + 15px)
+					left 0
+					z-index 800
+					width 176px
+					background-color #fff
+					padding 15px 0
+					box-shadow 0 2px 2px rgba(#000, .26)
+					@media $desktop
+						top calc(100% + 1px)
+						left -15px
+		&__sortMobile
+			@media $desktop
+				display none
+			&-current
+				position relative
+				padding-right 44px
+				&:before
+				&:after
+					position absolute
+					top 50%
+					right 0
+					width 20px
+					content ''
+					transform translateY(-50%)
+				&:before
+					height 2px
+					background-color #000
+				&:after
+					height 14px
+					border solid #000
+					border-width 2px 0
+			&-item
+				display block
+				padding 5px 20px
+				margin 20px 0
+				&--active
+					font-weight 700
+					pointer-events none
+			&-dropdown
+				display none
+				&--active
+					display block
+					animation fadeIn .5s
+					position absolute
+					right 15px
+					z-index 800
+					width calc(100% - 30px)
+					background-color #fff
+					border-radius 3px
+					box-shadow 3px 3px 27px rgba(#000, .16)
+		&__sort
+			display none
+			@media $desktop
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				&-item
+					position relative
+					padding 10px 0
+					margin-right 30px
+					&:hover
+						text-decoration none
+						&:after
+							width 100%
+					&:after
+						position absolute
+						bottom 0
+						left 0
+						width 0
+						height 1px
+						background-color #0e90da
+						content ''
+						transition all .2s
+					&--active
+						font-weight 500
+						&:after
+							position absolute
+							bottom 0
+							width 100%
+							height 1px
+							background-color #0e90da
+							content ''
+		&__list
+			display block
+			width 100%
+			@media $desktop
+				display table
+				width calc(100% - 100px)
+				margin 20px 50px 0
+			tr
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				flex-wrap wrap
+				justify-content space-between
+				border-bottom 1px solid #ececec
+				padding 25px 0
+				@media $desktop
+					display table-row
+					flex-wrap nowrap
+					border-bottom 0
+				td
+					@media $desktop
+						vertical-align top
+						width 33%
+						padding-top 20px
+						padding-bottom 20px
+					&:first-child
+						order 1
+						width 100%
+						@media $desktop
+							width 33%
+					&:nth-child(2)
+						order 2
+					&:nth-child(3)
+						order 4
+						width calc(100% - 80px)
+						@media $desktop
+							width 250px
+					&:last-child
+						order 3
+						margin-left 40px
+						@media $desktop
+							width 1%
+							text-align right
+							padding-left 70px
+		&__summ
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			flex-wrap wrap
+			justify-content space-between
+			@media $desktop
+				flex-wrap nowrap
+				white-space nowrap
+				margin-right 100px
+			&-item
+				position relative
+				padding-left 32px
+				margin-bottom 25px
+				&:first-child
+					position relative
+					&:before
+						position absolute
+						top 50%
+						right -58px
+						width 24px
+						height 20px
+						background-image url('../i/icons/icon-bid-swap.png')
+						content ''
+						transform translateY(-50%)
+			&-icon
+				position absolute
+				top 50%
+				left 0
+				transform translateY(-50%)
+			&-value
+				font-weight 500
+				font-size 1.6rem
+				margin 0
+			&-system
+				color #646464
+				font-size 1.2rem
+				margin 0
+		&__bid
+			&-number
+				font-weight 700
+				font-size 1.8rem
+				margin 0
+			&-system
+				display none
+				@media $desktop
+					display block
+					color #646464
+					font-size 1.2rem
+					margin 0
+		&__status
+			position relative
+			@media $desktop
+				padding-left 40px
+			&--new
+				&:before
+					background-image url('../i/icons/icon-bid-new.png')
+			&--wait
+				&:before
+					background-image url('../i/icons/icon-bid-wait.png')
+			&--ok
+				&:before
+					background-image url('../i/icons/icon-bid-ok.png')
+			&--error
+				&:before
+					background-image url('../i/icons/icon-bid-error.png')
+			&:before
+				position absolute
+				top -22px
+				right -45px
+				width 22px
+				height @width
+				content ''
+				@media $desktop
+					top 50%
+					right auto
+					left 0
+					transform translateY(-50%)
+			&-title
+				display none
+				@media $desktop
+					display block
+					font-weight 500
+					font-size 1.8rem
+					margin 0
+			&-descr
+				color #646464
+				font-size 1.2rem
+		&__info
+			display block
+			position relative
+			width 19px
+			height 23px
+			background-image url('../i/icons/icon-bid-info.png')
+	&-verification
+		margin-bottom 45px
+		@media $desktop
+			margin-bottom 70px
+		&__descr
+			margin-bottom 30px
+			@media $desktop
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				margin 35px 50px
+			&-item
+				margin 0 0 30px
+				@media $desktop
+					&:first-child
+						padding-top 30px
+						width 490px
+					&:last-child
+						flex 1
+						margin-left 80px
+				&--blue
+					background-color #e8f3fd
+					border-radius 3px
+					padding 20px
+					@media $desktop
+						padding 30px
+			&-title
+				font-size 2.4rem
+				margin 0 0 20px
+		&__add
+			margin-bottom 30px
+			@media $desktop
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				flex-wrap wrap
+				background-color rgba(#e9f3fd, .43)
+				padding 20px 50px 40px
+				margin-bottom 0
+				box-shadow 0 2px 32px rgba(#000, .14)
+			&-title
+				font-size 2.4rem
+				margin 0 0 25px
+				@media $desktop
+					width 100%
+			&-col
+				margin-bottom 25px
+				@media $desktop
+					&:first-of-type
+						width 330px
+						margin-right 30px
+					&:last-of-type
+						position relative
+						width 465px
+			&-attach
+				position absolute
+				left -9999px
+				& + label
+					display block
+					height 46px
+					color #434343
+					font-weight 500
+					line-height 46px
+					text-align center
+					background-color #e8f3fd
+					border-radius 3px
+					margin-bottom 25px
+					cursor pointer
+					@media $desktop
+						flex 1
+						background-color #fff
+						margin-right 25px
+						margin-bottom 0
+					&:before
+						display inline-block
+						vertical-align middle
+						width 18px
+						height @width
+						background-image url('../i/icons/icon-card.png')
+						margin-right 12px
+						content ''
+			&-btn
+				width 100%
+				@media $desktop
+					width auto
+		&__attach
+			@media $desktop
+				&-wrap
+					display -webkit-flex
+					display -moz-flex
+					display -ms-flex
+					display -o-flex
+					display flex
+					justify-content space-between
+					align-items center
+			&-preview
+				text-align center
+				margin-bottom 25px
+				@media $desktop
+					position absolute
+					top 0
+					left calc(100% + 30px)
+					img
+						max-width 304px
+						max-height 200px
+		&__cards
+			@media $desktop
+				padding 30px 50px 0
+			&-title
+				font-size 2.4rem
+				margin 0 0 25px
+	&-referal
+		&__descr
+			@media $desktop
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				margin 35px 50px 65px
+			&-item
+				margin-bottom 35px
+				@media $desktop
+					margin-bottom 0
+					&:first-child
+						padding-top 10px
+						margin-right 70px
+				&--blue
+					background-color #e8f3fd
+					border-radius 3px
+					padding 25px 15px
+					@media $desktop
+						flex-shrink 0
+						width 570px
+						padding 35px 25px
+			&-title
+				font-size 1.8rem
+				margin 0 0 25px
+				@media $desktop
+					font-size 2.4rem
+			&-text
+				a
+					color #0798d4
+		&__outgoing
+			@media $desktop
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				justify-content space-between
+				margin-top 50px
+			&-item
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				align-items center
+				line-height 2.2rem
+				margin-bottom 35px
+				@media $desktop
+					width 250px
+					margin-bottom 0
+				&:last-child
+					margin-bottom 0
+				p
+					margin 0
+				a
+					color #069ad2
+			&-number
+				min-width 80px
+				font-weight 800
+				font-size 60px
+				text-align center
+				margin-right 10px
+		&__link
+			margin-bottom 40px
+			@media $desktop
+				background-color #f9fcfe
+				padding 20px 50px 25px
+				margin-bottom 45px
+			&-title
+				font-size 1.8rem
+				margin 0 0 25px
+				@media $desktop
+					font-size 2.4rem
+					margin 0 0 20px
+			&-main
+				margin-bottom 20px
+				@media $desktop
+					.input-text
+						width 660px
+				.btn
+					width 100%
+					margin-top 15px
+					@media $desktop
+						width 238px
+						margin-top 0
+						margin-left 30px
+			&-items
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				flex-wrap wrap
+				margin-top 20px
+				@media $desktop
+					display inline-flex
+					background-color #fff
+					padding 8px 7px
+					margin 12px -7px 0
+			&-item
+				height 28px
+				color #fff
+				font-weight 500
+				font-size 1.2rem
+				line-height 28px
+				border-radius 2px
+				padding 0 8px 0 32px
+				margin 0 4px 8px 0
+				@media $desktop
+					margin 0 4px 0 0
+				&--facebook
+					background #334f8d url('../i/social/facebook.png') no-repeat 9px center
+				&--vk
+					background #4e7399 url('../i/social/vk.png') no-repeat 6px center
+				&--twitter
+					background #55acee url('../i/social/twitter.png') no-repeat 6px center
+				&--telegram
+					background #08c url('../i/social/telegram.png') no-repeat 6px center
+				a:hover&
+					position relative
+					text-decoration none
+					&:before
+						animation fadeIn .5s
+						position absolute
+						top 0
+						right 0
+						bottom 0
+						left 0
+						background-color rgba(#000, .15)
+						content ''
+				&:last-child
+					margin-right 0
+		&__stat
+			margin-bottom 35px
+			@media $desktop
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				justify-content space-between
+				margin 0 50px 35px
+			&:last-of-type
+				margin-bottom 0
+				@media $desktop
+					margin-bottom 65px
+			&-col
+				margin-bottom 35px
+				&--blue
+					background-color #e8f3fd
+					padding 30px 15px
+					margin 0 -15px
+					@media $desktop
+						flex-shrink 0
+						width 570px
+						border-radius 3px
+						padding 35px 30px
+						margin 0 0 0 70px
+			&-title
+				font-size 1.8rem
+				margin 0 0 15px
+				@media $desktop
+					font-size 2.4rem
+					margin 0 0 25px
+			&-descr
+				margin-bottom 30px
+				a
+					color #087dd6
+			&-totals
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				justify-content space-between
+				margin-bottom 25px
+			&-value
+				display block
+				font-weight 700
+				font-size 2.4rem
+				margin-bottom 6px
+			&-history
+				color #087dd6
+	&-promo
+		@media $desktop
+			margin 50px 50px 45px
+		&__descr
+			margin-bottom 50px
+			&-title
+				display none
+				@media $desktop
+					display block
+					font-size 2.4rem
+					margin 0 0 25px
+			&-text
+				line-height 2.2rem
+				a
+					color #059ad2
+		&__materials
+			margin-bottom 50px
+			@media $desktop
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				flex-wrap wrap
+				justify-content space-between
+			&-title
+				font-size 1.8rem
+				margin 0 0 15px
+				@media $desktop
+					width 100%
+					font-size 2.4rem
+					margin 0 0 20px
+			&-col
+				margin-bottom 15px
+				@media $desktop
+					&:first-of-type
+						flex 1
+						margin-right 15px
+					&:last-of-type
+						flex-shrink 0
+						width 574px
+						& ^[2]-item
+							height 100%
+			&-item
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				flex-direction column
+				justify-content center
+				align-items center
+				min-height 150px
+				border 1px dashed #a1a1a1
+				border-radius 3px
+				padding 0 25px
+				margin-bottom 15px
+				transition all .2s
+				@media $desktop
+					margin-bottom 25px
+				&:last-child
+					margin-bottom 0
+				&:hover
+					background-color #f7fbfe
+					& ^[1]__material-pic
+						display none
+					& ^[1]__material-size
+					& ^[1]__material-code
+					& ^[1]__material-btn
+						display block
+						animation fadeIn .5s
+		&__material
+			&-size
+				display none
+				margin-bottom 20px
+			&-code
+				display none
+				text-align center
+				margin-bottom 20px
+				a
+					color #0c92d8
+			&-textarea
+				position absolute
+				left -9999px
+				&--active
+					position static
+			&-btn
+				display none
+	&-settings
+		margin-top -10px
+		margin-bottom 40px
+		@media $desktop
+			margin 45px 50px 55px
+		&__title
+			display none
+			@media $desktop
+				display block
+				font-size 2.4rem
+				margin 0 0 15px
+		&__descr
+			margin-bottom 45px
+			@media $desktop
+				margin-bottom 35px
+		&__wrap
+			@media $desktop
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				justify-content flex-start
+		&__col
+			margin-bottom 40px
+			@media $desktop
+				flex-shrink 0
+				width 334px
+				margin-right 162px
+			&-title
+				font-weight 700
+				font-size 1.6rem
+				margin-bottom 25px
+		&__btn
+			width 100%
+			@media $desktop
+				width auto
+	&-non-active
+		background url('../i/cabinet-activate.png') no-repeat center 0
+		padding 110px 0 60px
+		@media $desktop
+			background-position center 5vw
+			padding 12vw 0
+		&__title
+			font-weight 700
+			font-size 1.8rem
+			text-align center
+			margin-bottom 25px
+			@media $desktop
+				font-weight 400
+				font-size 2.4rem
+				line-height 3.9rem
+			p
+				margin 0
+		&__descr
+			line-height 2.4rem
+			text-align center
+			p
+				margin 0
+/*  </cabinet>  */
+
+/*  <pagination>  */
+.pagination
+	display -webkit-flex
+	display -moz-flex
+	display -ms-flex
+	display -o-flex
+	display flex
+	justify-content center
+	align-items center
+	font-size 1.6rem
+	text-align center
+	margin 40px 0
+	&__item
+		padding 6px
+		&--active
+			font-weight 700
+			pointer-events none
+		&--dots
+			color #0e8fda
+		&--prev
+		&--next
+			width 18px
+			height 11px
+		&--prev
+			background-image url('../i/pagination__arrow.png')
+			margin-right 40px
+		&--next
+			background-image url('../i/pagination__arrow.png')
+			margin-left 40px
+			transform rotate(180deg)
+/*  </pagination>  */
+
+/*  <error-page>  */
+.error-page
+	min-height 100%
+	text-align center
+	background #eef5fc url('../i/error-page__mobile.png') no-repeat center 94px
+	@media $desktop
+		background url('../i/error-bg__desktop.png') no-repeat center 125px, linear-gradient(to right, rgba(#72b5f4, .18), rgba(#d5dee8, .18))
+	.container
+		padding-top 198px
+		@media $desktop
+			padding-top 338px
+		&:before
+			position absolute
+			top 64px
+			left 48px
+			color #b8cbde
+			font-weight 700
+			font-size 7.8rem
+			line-height 1
+			content attr(data-error-code)
+			@media $desktop
+				top 53px
+				left 362px
+				font-size 17.7rem
+	&__title
+		font-weight 700
+		font-size 1.8rem
+		margin 0 0 15px
+		@media $desktop
+			margin-bottom 80px
+	&__descr
+		font-size 1.6rem
+		line-height 2.4rem
+		margin-bottom 30px
+		@media $desktop
+			margin-bottom 50px
+	&__btn
+		margin-bottom 40px
+/*  </error-page>  */
+
+/*  <contacts>  */
+.contacts
+	margin 25px 0
+	@media $desktop
+		min-height 100%
+		background-color #e5f1fd
+		padding 20px 0 78px
+		margin 0
+	&__block
+		margin-bottom 45px
+		@media $desktop
+			position relative
+			background-color #fff
+			padding 16px 25px 20px 300px
+			margin-bottom 8px
+		&-title
+			font-size 1.8rem
+			margin 0 0 20px
+			@media $desktop
+				position absolute
+				top 20px
+				left 30px
+				width 220px
+				font-size 2.4rem
+				margin-bottom 0
+	&__list
+		margin-bottom 20px
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			align-items center
+			margin-bottom 40px
+		&-item
+			position relative
+			font-size 1.2rem
+			padding-left 35px
+			margin 28px 0
+			@media $desktop
+				padding-left 0
+				margin 0
+			&:before
+				position absolute
+				top 50%
+				left 0
+				content ''
+				transform translateY(-50%)
+				@media $desktop
+					left -35px
+			&--worktime
+				&:before
+					width 21px
+					height @width
+					background-image url('../i/icons/icon-clock.png')
+			&--email
+				&:before
+					width 23px
+					height 18px
+					background-image url('../i/icons/icon-email.png')
+			&--chat
+				&:before
+					width 25px
+					height 20px
+					background-image url('../i/icons/icon-chat.png')
+			p
+				margin 0
+				&:last-child
+					font-weight 500
+			a
+				color #1289df
+		.btn
+			width 100%
+	&__descr
+		line-height 2.4rem
+		@media $desktop
+			font-size 1.6rem
+	&__reviews
+		margin-bottom 20px
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content flex-start
+			margin-top 10px
+			margin-bottom 26px
+		&-item
+			display block
+			color #1289de
+			font-weight 700
+			font-size 1.6rem
+			margin 20px 0
+			@media $desktop
+				margin 0 72px 0 0
+				&:last-child
+					margin 0
+	&__social
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content flex-start
+			align-items center
+			margin-top 40px
+		&-title
+			font-size 1.8rem
+			margin 0 0 20px
+			@media $desktop
+				font-size 2.4rem
+				margin 0 48px 0 0
+		&-item
+			display block
+			position relative
+			color #1289de
+			font-weight 700
+			font-size 1.6rem
+			padding-left 38px
+			margin 24px 0
+			@media $desktop
+				margin 0 56px 0 0
+			&:before
+				position absolute
+				top 50%
+				left 0
+				content ''
+				transform translateY(-50%)
+			&--facebook
+				&:before
+					width 24px
+					height @width
+					background-image url('../i/social/contacts-facebook.png')
+			&--telegram
+				&:before
+					width 25px
+					height 21px
+					background-image url('../i/social/contacts-telegram.png')
+			&--twitter
+				&:before
+					width 24px
+					height 22px
+					background-image url('../i/social/contacts-twitter.png')
+			&--vk
+				&:before
+					width 25px
+					height 14px
+					background-image url('../i/social/contacts-vk.png')
+/*  </contacts>  */
+
+/*  <faq>  */
+.faq
+	@media $desktop
+		min-height 100%
+		background-color #e9f3fd
+		padding-bottom 52px
+	&__title
+		font-weight 500
+		font-size 1.8rem
+		text-align center
+		background-color #eef5fc
+		padding 20px 0
+		margin 0 -15px
+		@media $desktop
+			font-size 2.4rem
+			background-color inherit
+			margin 0
+	&__wrap
+		position relative
+		margin 25px 0
+		@media $desktop
+			background-color #fff
+			border-radius 0 0 10px 10px
+			padding 
+			margin 0 -50px
+			box-shadow 0 17px 9px rgba(#4a6a81, .1)
+	&__nav
+		margin-bottom 10px
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content center
+			border-bottom 1px solid #e9e9e9
+			margin-bottom 0
+		&-item
+			display none
+			@media $desktop
+				display block
+				height 70px
+				line-height 70px
+				border-left 1px solid #e6e6e6
+				padding 0 35px
+				&:first-child
+					border-left 0
+			&--active
+				display block
+				font-weight 300
+				font-size 2.4rem
+				pointer-events none
+				@media $desktop
+					font-weight 500
+					font-size 1.4rem
+	&__main
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+	&__questions
+		margin-bottom 30px
+		@media $desktop
+			flex-shrink 0
+			width 362px
+			border-right 1px solid #e6e6e6
+			padding 30px 0 35px
+			margin-bottom 0
+		&-item
+			display block
+			color #01b2eb
+			margin 25px 0
+			@media $desktop
+				font-size 1.5rem
+				line-height 2.2rem
+				padding 10px 50px
+				margin 0
+			&--active
+				font-weight 700
+				pointer-events none
+				@media $desktop
+					background-color #f8fbfe
+					border solid #e6e6e6
+					border-width 1px 0
+	&__answer
+		@media $desktop
+			padding 40px 45px
+		&-loading
+			height 150px
+			background url('../i/spinner.svg') no-repeat center center / 80px auto
+		&-title
+			font-size 2.4rem
+			margin 0 0 30px
+		&-text
+			line-height 2.4rem
+			a
+				color #01b2eb
+/*  </faq>  */
+
+/*  <news>  */
+.news
+	@media $desktop
+		min-height 100%
+		background-color #e9f3fd
+		padding-bottom 52px
+	&__title
+		font-weight 500
+		font-size 1.8rem
+		text-align center
+		background-color #eef5fc
+		padding 20px 0
+		margin 0 -15px
+		@media $desktop
+			font-size 2.4rem
+			background-color inherit
+			margin 0
+	&__wrap
+		position relative
+		margin-top 20px
+		@media $desktop
+			overflow hidden
+			background-color #fff
+			border-radius 0 0 10px 10px
+			padding 
+			margin 0 -50px
+			box-shadow 0 17px 9px rgba(#4a6a81, .1)
+	&__nav
+		margin-bottom 10px
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content center
+			border-bottom 1px solid #e9e9e9
+			margin-bottom 0
+		&-item
+			display none
+			@media $desktop
+				display block
+				height 70px
+				line-height 70px
+				border-left 1px solid #e6e6e6
+				padding 0 35px
+				&:first-child
+					border-left 0
+			&--active
+				display block
+				font-weight 300
+				font-size 2.4rem
+				pointer-events none
+				@media $desktop
+					font-weight 500
+					font-size 1.4rem
+	&__main
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		flex-direction column
+		@media $desktop
+			flex-direction row
+	&__latest
+		order 2
+		border-top 1px solid #e6e6e6
+		padding 0 15px
+		margin 0 -15px
+		@media $desktop
+			order 0
+			flex-shrink 0
+			position relative
+			width 360px
+			border-top 0
+			border-right 1px solid #e6e6e6
+			padding 35px 0 52px
+			margin 0
+		&-item
+			margin 32px 0
+			@media $desktop
+				padding 18px 50px
+				margin 0
+				&--active
+					background-color #f8fbfe
+					border solid #e6e6e6
+					border-width 1px 0
+		&-title
+			color #01b2eb
+			font-size 1.5rem
+			margin 0 0 5px
+			@media $desktop
+				line-height 2.5rem
+			a:hover
+				color #105267
+		&-date
+			display block
+			font-size 1.2rem
+		&-more
+			display block
+			text-align center
+			background-color #e8f3fd
+			padding 20px 0
+			margin 0 -15px
+			@media $desktop
+				position absolute
+				right 0
+				bottom 0
+				left 0
+				height 52px
+				line-height 52px
+				padding 0
+				margin 0
+			&:after
+				display inline-block
+				vertical-align 2px
+				width 9px
+				height @width
+				border solid #000
+				border-width 0 2px 2px 0
+				margin-left 12px
+				content ''
+				transform rotate(45deg)
+			a:hover&
+				text-decoration none
+				background-color darken(#e8f3fd, 5)
+	&__detail
+		margin-bottom 42px
+		@media $desktop
+			margin-bottom 0
+		&-system
+			margin-bottom 26px
+			@media $desktop
+				position relative
+				height 315px
+				background-repeat no-repeat
+				background-position center center
+				background-size cover
+		&-time
+			display block
+			color #9f9f9f
+			font-size 1.2rem
+			margin-bottom 18px
+			@media $desktop
+				position absolute
+				top 45px
+				left 45px
+				color #fff
+				margin-bottom 0
+		&-pic
+			width 100%
+			margin-bottom 18px
+			@media $desktop
+				display none
+		&-title
+			font-weight 400
+			font-size 2.4rem
+			margin 0
+			@media $desktop
+				position absolute
+				bottom 45px
+				left 45px
+				color #fff
+				font-size 3rem
+		&-text
+			line-height 2.4rem
+			margin 25px 0
+			@media $desktop
+				padding 0 45px
+				margin 30px 0
+			a
+				color #01b2eb
+/*  </news>  */
+
+/*  <partners>  */
+.partners
+	@media $desktop
+		min-height 100%
+		background-color #e7f2fd
+		padding 17px 0 44px
+	&__wrap
+		margin 30px 0
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			background-color #fff
+			border-radius 0 0 10px 10px
+			padding 65px 50px
+			margin 0 -50px
+			box-shadow 0 17px 9px rgba(#4a6a81, .1)
+	&__item
+		padding-top 150px
+		margin-top 55px
+		@media $desktop
+			width 30%
+			padding-top 145px
+			margin-top 0
+		&:first-child
+			margin-top 0
+		&--referal
+			background url('../i/partners-referal.png') no-repeat 0 0
+			@media $desktop
+				background-position center 0
+		&--monitoring
+			background url('../i/partners-monitoring.png') no-repeat 0 0 / auto 114px
+			@media $desktop
+				background-position center 6px
+				background-size auto
+		&--widget
+			background url('../i/partners-widget.png') no-repeat 0 0 / auto 114px
+			@media $desktop
+				background-position center 12px
+				background-size auto
+		&-title
+			font-size 2.4rem
+			margin 0 0 20px
+			@media $desktop
+				margin 0 0 25px
+		&-slogan
+			color #666
+			margin 0 0 20px
+			@media $desktop
+				margin 0 0 25px
+		&-descr
+			line-height 2.4rem
+			margin-bottom 20px
+			@media $desktop
+				margin-bottom 30px
+		&-more
+			color #0090e3
+			a
+				line-height 60px
+			.btn
+				width 100%
+				font-size 1.4rem
+				text-align center
+				white-space nowrap
+				padding 0
+				@media $desktop
+					font-size 1.6rem
+					white-space pre-wrap
+			.btn--arrow
+				&:after
+					margin-left 5px
+					@media $desktop
+						margin-left 12px
+/*  </partners>  */
+
+/*  <inner-page>  */
+.inner-page
+	@media $desktop
+		min-height 100%
+		background-color #eaf3fc
+		padding-bottom 45px
+	&__mobile-nav
+		position absolute
+		top 5px
+		right 0
+		left 0
+		@media $desktop
+			display none
+	&-nav
+		&__burger
+			position absolute
+			top 4px
+			right 0
+			width 20px
+			height 14px
+			border solid #000
+			border-width 2px 0
+			&:before
+				position absolute
+				top 50%
+				right 0
+				left 0
+				height 2px
+				background-color #000
+				content ''
+				transform translateY(-50%)
+		&__list
+			display none
+			&--active
+				display block
+				animation fadeIn .5s
+				position absolute
+				top 34px
+				right 0
+				left 0
+				z-index 20
+				background-color #fff
+				border-radius 3px
+				box-shadow 3px 3px 27px rgba(#000, .17)
+				content ''
+			&-item
+				display block
+				padding 5px 22px
+				margin 25px 0
+				&--active
+					font-weight 500
+					pointer-events none
+	&__title
+		font-weight 500
+		font-size 1.8rem
+		text-align center
+		background-color #eef5fc
+		padding 20px 0
+		margin 0 -15px
+		@media $desktop
+			font-size 2.4rem
+			background-color inherit
+			margin 0
+	&__wrap
+		line-height 2.6rem
+		margin 20px 0
+		@media $desktop
+			background-color #fff
+			border-radius 0 0 10px 10px
+			padding 50px
+			margin 0 -50px
+			box-shadow 0 17px 9px rgba(#4a6a81, .1)
+		a
+			color #009ee7
+		h2
+			font-weight 400
+			font-size 1.8rem
+			margin 50px 0 25px
+			&:first-of-type
+				margin 0 0 25px
+			@media $desktop
+				font-size 2.4rem
+/*  </inner-page>  */
+
+/*  <form-page>  */
+.form-page
+	@media $desktop
+		min-height 100%
+		background-color #eaf3fc
+		padding-bottom 45px
+	&__title
+		font-weight 500
+		font-size 1.8rem
+		text-align center
+		background-color #eef5fc
+		padding 20px 0
+		margin 0 -15px
+		@media $desktop
+			font-size 2.4rem
+			background-color inherit
+			margin 0
+	&__wrap
+		margin 40px 0
+		@media $desktop
+			background-color #fff
+			border-radius 0 0 10px 10px
+			padding 50px 280px 58px
+			margin 0 -50px
+			box-shadow 0 17px 9px rgba(#4a6a81, .1)
+.register
+	&__rules
+		margin-bottom 25px
+		@media $desktop
+			margin-bottom 20px
+		&-check
+			position absolute
+			left -9999px
+			& + label
+				display block
+				position relative
+				padding-left 35px
+				cursor pointer
+				&:before
+				&:after
+					position absolute
+					top 50%
+					content ''
+					transform translateY(-50%)
+				&:before
+					left 0
+					width 22px
+					height @width
+					border 2px solid #3dcfff
+					border-radius 3px
+				&:after
+					display none
+				a
+					color #009ee7
+			&:checked + label
+				&:after
+					display block
+					animation fadeIn .5s
+					left 6px
+					width 10px
+					height 8px
+					background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNpi5D38n4EAcALiMCYCisqAeCcQi+FTWA7ECUA8G4hlkBUqILGDoKa9BmILkCaQQl0gXgnEd4HYF4glgHgmEHMD8QMgtgLi/SxAQhKI5YD4FxBPBeIzQCwCxJ1AXAGzghHqa0YgLgTiDiBmBeJ+IC5CdjAjWvC4AnEqEEcC8V9kCYAAAwC59hemfAd+NQAAAABJRU5ErkJggg==')
+	&__system
+		@media $desktop
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			align-items center
+		&-item
+			margin-bottom 25px
+			@media $desktop
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				justify-content flex-start
+				align-items center
+				margin-bottom 0
+				span
+					margin-right 20px
+			&:last-child
+				margin-bottom 0
+			.btn
+				width 100%
+				@media $desktop
+					width auto
+/*  </form-page>  */

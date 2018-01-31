@@ -1,0 +1,236 @@
+//= template/header.html
+		<div class="container">
+			<style>
+				.markup table {
+					width:100%;
+					margin-bottom:20px;
+				}
+					.markup table th {
+						font-weight:bold;
+						text-align:left;
+					}
+					.markup table th, .markup table td {
+						vertical-align:top;
+						border:1px solid #dfe2e5;
+						padding:8px 12px;
+					}
+					.elements td:first-child {
+						width:20%;
+					}
+					.elements td:last-child {
+						width:40%;
+					}
+					.elements td:nth-of-type(2) {
+						width:40%;
+					}
+				.markup h2 {
+					font-weight:300;
+					font-size:2.6rem;
+					margin:20px 0 10px;
+				}
+				.markup code {
+					font-family:"Courier New", Courier, monospace, sans-serif;
+					text-align:left;
+					color:#555;
+					background:#eaeaea;
+					border-radius:3px;
+				}
+					.markup pre {
+						background:#eaeaea;
+					}
+				.markup .overflow {
+					max-width:600px;
+				}
+					.markup .overflow pre {
+						padding:15px 5px;
+						margin:0 0 10px;
+					}
+						.markup .overflow pre:last-child {
+							margin:0;
+						}
+			</style>
+			<div class="full markup">
+				<h2>Основные классы</h2>
+				<table>
+					<tr>
+						<td><code>.tl</code></td>
+						<td>text-align:left</td>
+					</tr>
+					<tr>
+						<td><code>.tc</code></td>
+						<td>text-align:center</td>
+					</tr>
+					<tr>
+						<td><code>.tr</code></td>
+						<td>text-align:right</td>
+					</tr>
+					<tr>
+						<td><code>.rel</code></td>
+						<td>position:relative</td>
+					</tr>
+					<tr>
+						<td><code>.abs</code></td>
+						<td>position:absolute</td>
+					</tr>
+					<tr>
+						<td><code>.hide</code></td>
+						<td>display:none !important</td>
+					</tr>
+					<tr>
+						<td><code>.form__row</code></td>
+						<td>Задает отступ снизу</td>
+					</tr>
+					<tr>
+						<td><code>.no-scroll</code></td>
+						<td>Убирает прокрутку страницы, применяется для тега <code>html</code></td>
+					</tr>
+					<tr>
+						<td><code>.fadeIn</code></td>
+						<td>Добавляет анимацию плавного появления элемента</td>
+					</tr>
+				</table>
+				<h2>Атрибуты</h2>
+				<table>
+					<tr>
+						<td><code>data-tooltip="%text%"</code></td>
+						<td>Добавляет тултип для элемента. Работает только на десктоп версии</td>
+					</tr>
+					<tr>
+						<td><code>data-tooltip-left="%text%"</code></td>
+						<td>Зеркальное отображение тултипа</td>
+					</tr>
+				</table>
+				<h2>Подключенные плагины</h2>
+				<ol>
+					<li><a href="https://igorescobar.github.io/jQuery-Mask-Plugin/docs.html">jQuery Input Mask</a></li>
+					<li><a href="http://fancyapps.com/fancybox/3/docs/">jQuery Fancybox</a></li>
+					<li><a href="https://jqueryvalidation.org/documentation/">jQuery Validate</a></li>
+					<li><a href="https://zenorocha.github.io/clipboard.js">ClipboardJS</a></li>
+					<li><a href="https://github.com/liabru/jquery-match-height">jQuery Match Height</a></li>
+					<li><a href="https://flickity.metafizzy.co/">Flickity carousel</a></li>
+				</ol>
+				<h2>Модальные окна</h2>
+				<p>Для вызова модальных окон подключен плагин <a href="http://fancyapps.com/fancybox/3/docs/">fancybox</a>. Для вызывающего элемента необходимо добавить класс <code>.js-modal</code>. Если это ссылка, то вызываемый адрес пишет в атрибуте href, если какой-то другой элемент, то прописывается атрибут <code>data-src="%target%"</code></p>
+				<ul>
+					<li><a href="#bidOrder" class="js-modal">Заявка на пополнение резерва</a></li>
+					<li><a href="#bidSuccess" class="js-modal">Заявка №154672343 успешно создана и принята в обработку!</a></li>
+					<li><a href="#bidSteps" class="js-modal">Для завершения обмена следуйте инструкции</a></li>
+					<li><a href="#bidInfo" class="js-modal">Информация по заявке: <strong>№154672343</strong></a></li>
+					<li><a href="#referalList" class="js-modal">Список рефералов</a></li>
+					<li><a href="#referalHistory" class="js-modal">История реферальных начислений</a></li>
+					<li><a href="#referalPays" class="js-modal">История вознаграждений</a></li>
+					<li><a href="#partnerMonitoring" class="js-modal">Для мониторингов</a></li>
+					<li><a href="#partnerPayments" class="js-modal">Прием платежей для Вашего сайта</a></li>
+					<li><a href="#" class="js-alert-error">Вызвать сообщение об ошибке</a></li>
+					<li><a href="#" class="js-alert-success">Вызвать сообщение об успехе</a></li>
+				</ul>
+				<h2>Основные элементы</h2>
+				<table class="elements">
+					<tr>
+						<td><code>.input-text</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;input type="text" name="" id="" class="input-text" placeholder="Input text"></code></pre>
+								<pre><code>&lt;input type="email" name="" id="" class="input-text" placeholder="Input email"></code></pre>
+								<p>При указании типа поля email на мобильном устройстве будет вызвана клавиатура для ввода email. Обычно она отличается только наличием символа @</p>
+								<pre><code>&lt;input type="tel" name="" id="" class="input-text" placeholder="Input tel"></code></pre>
+								<pre><code>&lt;input type="number" name="" id="" class="input-text" placeholder="Input number"></code></pre>
+							</div>
+						</td>
+						<td><input type="text" name="" id="" class="input-text" placeholder="Input"></td>
+					</tr>
+					<tr>
+						<td><code>.input-text .input-text--error</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;input type="text" name="" id="" class="input-text input-text--error" placeholder="Input text"></code></pre>
+								<pre><code>&lt;input type="email" name="" id="" class="input-text input-text--error" placeholder="Input email"></code></pre>
+								<p>При указании типа поля email на мобильном устройстве будет вызвана клавиатура для ввода email. Обычно она отличается только наличием символа @</p>
+								<pre><code>&lt;input type="tel" name="" id="" class="input-text input-text--error" placeholder="Input tel"></code></pre>
+								<pre><code>&lt;input type="number" name="" id="" class="input-text input-text--error" placeholder="Input number"></code></pre>
+							</div>
+						</td>
+						<td><input type="text" name="" id="" class="input-text input-text--error" placeholder="Error input"></td>
+					</tr>
+					<tr>
+						<td><code>.textarea</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;textarea name="" id="" cols="30" rows="10" class="textarea" placeholder="Some text">&lt;/textarea></code></pre>
+							</div>
+						</td>
+						<td><textarea name="" id="" cols="30" rows="10" class="textarea" placeholder="Some text"></textarea></td>
+					</tr>
+					<tr>
+						<td><code>.select</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;select name="" id="" class="select">
+			&lt;option value="">Option 1&lt;/option>
+			&lt;option value="">Option 2&lt;/option>
+		&lt;/select></code></pre>
+							</div>
+						</td>
+						<td><select name="" id="" class="select">
+							<option value="">Option 1</option>
+							<option value="">Option 2</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td><code>.btn</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;button class="btn">Button&lt;/button></code></pre>
+							</div>
+						</td>
+						<td><button class="btn">Button</button></td>
+					</tr>
+					<tr>
+						<td><code>.btn .btn--arrow</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;button class="btn btn--arrow">Button with arrow&lt;/button></code></pre>
+							</div>
+						</td>
+						<td><button class="btn btn--arrow">Button with arrow</button></td>
+					</tr>
+					<tr>
+						<td><code>.btn .btn--blue</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;button class="btn btn--blue">Blue button&lt;/button></code></pre>
+							</div>
+						</td>
+						<td><button class="btn btn--blue">Blue button</button></td>
+					</tr>
+					<tr>
+						<td><code>.btn .btn--fullwidth</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;button class="btn btn--fullwidth">Fullwidth button&lt;/button></code></pre>
+							</div>
+						</td>
+						<td><button class="btn btn--fullwidth">Fullwidth button</button></td>
+					</tr>
+					<tr>
+						<td><code>.btn .btn--blue .btn--fullwidth</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;button class="btn btn--blue btn--fullwidth">Combined button&lt;/button></code></pre>
+							</div>
+						</td>
+						<td><button class="btn btn--blue btn--fullwidth">Combined button</button></td>
+					</tr>
+					<tr>
+						<td><code>.btn .btn--blue .btn--arrow</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;button class="btn btn--blue btn--arrow">Blue arrow button&lt;/button></code></pre>
+							</div>
+						</td>
+						<td><button class="btn btn--blue btn--arrow">Blue arrow button</button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+//= template/footer.html

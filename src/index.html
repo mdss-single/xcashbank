@@ -1,0 +1,335 @@
+//= template/header.html
+		<div class="exchange">
+			<div class="container">
+				<div class="exchange__wrap">
+					<div class="exchange__col exchange__col--give">
+						<div class="exchange-col__header">
+							<span class="exchange-header__title">Отдаю</span>
+							<div class="exchange-header__currency">
+								<input type="radio" name="give" id="give1" class="exchange-header__currency-item js-exchange-currency-symbol" data-symbol="BTC" checked>
+								<label for="give1">BTC</label>
+								<input type="radio" name="give" id="give2" class="exchange-header__currency-item js-exchange-currency-symbol" data-symbol="грн">
+								<label for="give2">UAH</label>
+								<input type="radio" name="give" id="give3" class="exchange-header__currency-item js-exchange-currency-symbol" data-symbol="$">
+								<label for="give3">USD</label>
+								<input type="radio" name="give" id="give4" class="exchange-header__currency-item js-exchange-currency-symbol" data-symbol="€">
+								<label for="give4">EUR</label>
+							</div>
+						</div>
+						<div class="exchange-col__summ" data-text="от 150 000 до 1 000 000">
+							<input type="tel" class="exchange-summ__value js-mask-summ" value="1000" placeholder="0">
+							<img src="i/spinner.svg" alt="" class="exchange-summ__icon js-exchange-icon-give">
+							<span class="exchange-summ__currency"></span>
+						</div>
+						<div class="exchange-col__mobile js-mobile-exchange-give">
+							<img src="i/spinner.svg" alt="" class="exchange-col__mobile-icon js-exchange-icon-give">
+							<span class="exchange-col__mobile-name"></span>
+						</div>
+						<div class="exchange-col__currency">
+							<div class="exchange-currency__item exchange-currency__item--active" data-template="ajax-yandex-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/qiwi.png" alt=""></div>
+								<span class="exchange-currency__item-value">100</span>
+								<span class="exchange-currency__item-name">QIWI кошелек RUB</span>
+							</div>
+							<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/yandex-money.png" alt=""></div>
+								<span class="exchange-currency__item-value">100</span>
+								<span class="exchange-currency__item-name">Яндекс.Деньги RUB</span>
+							</div>
+							<div class="exchange-currency__item" data-template="ajax-perfect-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/exmo.png" alt=""></div>
+								<span class="exchange-currency__item-value">100</span>
+								<span class="exchange-currency__item-name">Exmo RUB</span>
+							</div>
+							<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/alpha-bank.png" alt=""></div>
+								<span class="exchange-currency__item-value">100</span>
+								<span class="exchange-currency__item-name">Альфа Банк RUB</span>
+							</div>
+							<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/alpha-bank.png" alt=""></div>
+								<span class="exchange-currency__item-value">100</span>
+								<span class="exchange-currency__item-name">Альфа-Банк cash-in RUB</span>
+							</div>
+							<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/sberbank.png" alt=""></div>
+								<span class="exchange-currency__item-value">100</span>
+								<span class="exchange-currency__item-name">Сбербанк RUB</span>
+							</div>
+							<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/tinkoff.png" alt=""></div>
+								<span class="exchange-currency__item-value">100</span>
+								<span class="exchange-currency__item-name">Тинькофф RUB</span>
+							</div>
+							<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/vtb.png" alt=""></div>
+								<span class="exchange-currency__item-value">100</span>
+								<span class="exchange-currency__item-name">ВТБ24 RUB</span>
+							</div>
+							<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/visa.png" alt=""></div>
+								<span class="exchange-currency__item-value">100</span>
+								<span class="exchange-currency__item-name">Другие банки РФ RUB</span>
+							</div>
+							<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/cash-rub.png" alt=""></div>
+								<span class="exchange-currency__item-value">100</span>
+								<span class="exchange-currency__item-name">Наличные RUB</span>
+							</div>
+							<div class="exchange-currency__item" data-template="ajax-yandex-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/contact.png" alt=""></div>
+								<span class="exchange-currency__item-value">100</span>
+								<span class="exchange-currency__item-name">Contact RUB</span>
+							</div>
+						</div>
+					</div>
+					<div class="exchange__col exchange__col--get">
+						<div class="exchange-col__header">
+							<span class="exchange-header__title">Получаю</span>
+							<div class="exchange-header__currency">
+								<input type="radio" name="get" id="get1" class="exchange-header__currency-item js-exchange-currency-symbol" data-symbol="BTC" checked>
+								<label for="get1">BTC</label>
+								<input type="radio" name="get" id="get2" class="exchange-header__currency-item js-exchange-currency-symbol" data-symbol="грн">
+								<label for="get2">UAH</label>
+								<input type="radio" name="get" id="get3" class="exchange-header__currency-item js-exchange-currency-symbol" data-symbol="$">
+								<label for="get3">USD</label>
+								<input type="radio" name="get" id="get4" class="exchange-header__currency-item js-exchange-currency-symbol" data-symbol="€">
+								<label for="get4">EUR</label>
+							</div>
+							<span class="exchange-header__reserv">Резерв</span>
+						</div>
+						<div class="exchange-col__summ">
+							<span class="exchange-summ__value js-mask-summ">1000</span>
+							<a href="#" class="exchange-summ__request">Мало?</a>
+							<img src="i/spinner.svg" alt="" class="exchange-summ__icon js-exchange-icon-get">
+							<span class="exchange-summ__currency"></span>
+						</div>
+						<div class="exchange-col__mobile js-mobile-exchange-get">
+							<img src="i/spinner.svg" alt="" class="exchange-col__mobile-icon js-exchange-icon-get">
+							<span class="exchange-col__mobile-name"></span>
+						</div>
+						<div class="exchange-col__currency">
+							<div class="exchange-currency__item exchange-currency__item--active" data-template="ajax-perfect-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/bitcoin.png" alt=""></div>
+								<span class="exchange-currency__item-value">0.00083</span>
+								<span class="exchange-currency__item-name">Bitcoins BTC</span>
+								<span class="exchange-currency__item-reserv">89.24 BTC</span>
+							</div>
+							<div class="exchange-currency__item" data-template="ajax-perfect-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/litecoin.png" alt=""></div>
+								<span class="exchange-currency__item-value">0.0048</span>
+								<span class="exchange-currency__item-name">Litecoin LTC</span>
+								<span class="exchange-currency__item-reserv">1017.44 LTC</span>
+							</div>
+							<div class="exchange-currency__item" data-template="ajax-perfect-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/etherium.png" alt=""></div>
+								<span class="exchange-currency__item-value">0.0022</span>
+								<span class="exchange-currency__item-name">Etherium ETH</span>
+								<span class="exchange-currency__item-reserv">140.41 ETH</span>
+							</div>
+							<div class="exchange-currency__item" data-template="ajax-perfect-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/perfect-money.png" alt=""></div>
+								<span class="exchange-currency__item-value">1.5534</span>
+								<span class="exchange-currency__item-name">Perfect Money USD</span>
+								<span class="exchange-currency__item-reserv">2975.79 USD</span>
+							</div>
+							<div class="exchange-currency__item" data-template="ajax-perfect-money.html">
+								<div class="exchange-currency__item-icon"><img src="i/payment/advanced-cash.png" alt=""></div>
+								<span class="exchange-currency__item-value">1.5218</span>
+								<span class="exchange-currency__item-name">Advanced Cash USD</span>
+								<span class="exchange-currency__item-reserv">0 USD</span>
+							</div>
+						</div>
+					</div>
+					<div class="exchange__col exchange__col--info">
+						<div class="exchange-col__header">
+							<span class="exchange-header__title">Обменять деньги</span>
+							<div class="exchange-header__icons">
+								<div class="exchange-header__icons-item"><img src="i/spinner.svg" alt="" class="js-exchange-icon-give"></div>
+								<div class="exchange-header__icons-item"><img src="i/spinner.svg" alt="" class="js-exchange-icon-get"></div>
+							</div>
+						</div>
+						<form action="" class="exchange-form">
+							<!-- сюда подгружается шаблон с полями платежной системы, с которой будет совершен платеж -->
+							<div class="exchange-wallet form__row js-exchange-give">
+								<div class="exchange-wallet__empty"></div>
+							</div>
+							<!-- сюда подгружается шаблон с полями платежной системы, куда будет совершен платеж -->
+							<div class="exchange-wallet form__row js-exchange-get">
+								<div class="exchange-wallet__empty"></div>
+							</div>
+							<div class="exchange-info__summ form__row">
+								<div class="exchange-info__summ-item">
+									<p class="exchange-info__summ-title">Отдаю RUR</p>
+									<p class="exchange-info__summ-value">1000 <span class="exchange-info__summ-currency">грн.</span></p>
+								</div>
+								<div class="exchange-info__summ-item">
+									<p class="exchange-info__summ-title">Получаю USD</p>
+									<p class="exchange-info__summ-value"><span class="exchange-info__summ-currency">$</span> 15.20</p>
+								</div>
+							</div>
+							<div class="exchange-info__detail form__row" data-tooltip="Комиссия обмена 99.97%">
+								<span class="js-exchange-give-info"><strong>100</strong> Яндекс.Деньги RUB</span> = <span class="js-exchange-get-info"><strong>1.5564</strong> Perfect Money USD</span>
+							</div>
+							<div class="exchange-info__btn form__row">
+								<button type="submit" class="btn btn--arrow">Продолжить</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="homepage-about-us">
+			<div class="container">
+				<p class="homepage-about-us__title">О нас в простых цифрах</p>
+				<div class="homepage-about-us__info">
+					<div class="homepage-about-us__item">
+						<span class="homepage-about-us__item-title">Общая сумма наших резервов</span>
+						<span class="homepage-about-us__item-value">400 000 000 <span class="homepage-about-us__item-currency">грн.</span></span>
+					</div>
+					<div class="homepage-about-us__item">
+						<span class="homepage-about-us__item-title">Заявок сегодня</span>
+						<span class="homepage-about-us__item-value">281</span>
+					</div>
+					<div class="homepage-about-us__item">
+						<span class="homepage-about-us__item-title">Проведено на сумму</span>
+						<span class="homepage-about-us__item-value">4 254 145 000 <span class="homepage-about-us__item-currency">грн.</span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="homepage-latest">
+			<div class="container">
+				<div class="latest-actions">
+					<div class="latest-actions__title">Последние операции</div>
+					<div class="latest-actions__item">
+						<p class="latest-actions__item-date">14.12.2017, 23:47</p>
+						<div class="latest-actions__item-info">
+							<img src="i/payment/perfect-money.png" alt="">
+							<p class="latest-actions__item-value">2.9 <span>USD</span></p>
+						</div>
+						<div class="latest-actions__item-delimeter"></div>
+						<div class="latest-actions__item-info">
+							<img src="i/payment/litecoin.png" alt="">
+							<p class="latest-actions__item-value">0.010033 <span>LTC</span></p>
+						</div>
+					</div>
+					<div class="latest-actions__item">
+						<p class="latest-actions__item-date">14.12.2017, 22:00</p>
+						<div class="latest-actions__item-info">
+							<img src="i/payment/qiwi.png" alt="">
+							<p class="latest-actions__item-value">14700 <span>RUB</span></p>
+						</div>
+						<div class="latest-actions__item-delimeter"></div>
+						<div class="latest-actions__item-info">
+							<img src="i/payment/etherium.png" alt="">
+							<p class="latest-actions__item-value">0.305223 <span>ETH</span></p>
+						</div>
+					</div>
+					<div class="latest-actions__item">
+						<p class="latest-actions__item-date">14.12.2017, 23:47</p>
+						<div class="latest-actions__item-info">
+							<img src="i/payment/perfect-money.png" alt="">
+							<p class="latest-actions__item-value">2.9 <span>USD</span></p>
+						</div>
+						<div class="latest-actions__item-delimeter"></div>
+						<div class="latest-actions__item-info">
+							<img src="i/payment/litecoin.png" alt="">
+							<p class="latest-actions__item-value">0.010033 <span>LTC</span></p>
+						</div>
+					</div>
+					<div class="latest-actions__item">
+						<p class="latest-actions__item-date">14.12.2017, 22:00</p>
+						<div class="latest-actions__item-info">
+							<img src="i/payment/qiwi.png" alt="">
+							<p class="latest-actions__item-value">14700 <span>RUB</span></p>
+						</div>
+						<div class="latest-actions__item-delimeter"></div>
+						<div class="latest-actions__item-info">
+							<img src="i/payment/etherium.png" alt="">
+							<p class="latest-actions__item-value">0.305223 <span>ETH</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="latest-reviews">
+					<p class="latest-reviews__title">Отзывы</p>
+					<div class="latest-reviews__list js-latest-reviews">
+						<div class="latest-reviews__item">
+							<div class="latest-reviews__info">
+								<p class="latest-reviews__author">Артём</p>
+								<time class="latest-reviews__date" datetime="2014-03-28T10:19">28 марта 2014, 10:19</time>
+							</div>
+							<div class="latest-reviews__text">
+								Сайт отличный, всё просто и легко. Минимальная комиссия, а так же быстрый обмен в течении минуты. Огромной спасибо!
+							</div>
+						</div>
+						<div class="latest-reviews__item">
+							<div class="latest-reviews__info">
+								<p class="latest-reviews__author">Артём</p>
+								<time class="latest-reviews__date" datetime="2014-03-28T10:19">28 марта 2014, 10:19</time>
+							</div>
+							<div class="latest-reviews__text">
+								Сайт отличный, всё просто и легко. Минимальная комиссия, а так же быстрый обмен в течении минуты. Огромной спасибо!
+							</div>
+						</div>
+						<div class="latest-reviews__item">
+							<div class="latest-reviews__info">
+								<p class="latest-reviews__author">Артём</p>
+								<time class="latest-reviews__date" datetime="2014-03-28T10:19">28 марта 2014, 10:19</time>
+							</div>
+							<div class="latest-reviews__text">
+								Сайт отличный, всё просто и легко. Минимальная комиссия, а так же быстрый обмен в течении минуты. Огромной спасибо!
+							</div>
+						</div>
+						<div class="latest-reviews__item">
+							<div class="latest-reviews__info">
+								<p class="latest-reviews__author">Артём</p>
+								<time class="latest-reviews__date" datetime="2014-03-28T10:19">28 марта 2014, 10:19</time>
+							</div>
+							<div class="latest-reviews__text">
+								Сайт отличный, всё просто и легко. Минимальная комиссия, а так же быстрый обмен в течении минуты. Огромной спасибо!
+							</div>
+						</div>
+						<div class="latest-reviews__item">
+							<div class="latest-reviews__info">
+								<p class="latest-reviews__author">Артём</p>
+								<time class="latest-reviews__date" datetime="2014-03-28T10:19">28 марта 2014, 10:19</time>
+							</div>
+							<div class="latest-reviews__text">
+								Сайт отличный, всё просто и легко. Минимальная комиссия, а так же быстрый обмен в течении минуты. Огромной спасибо!
+							</div>
+						</div>
+						<div class="latest-reviews__item">
+							<div class="latest-reviews__info">
+								<p class="latest-reviews__author">Артём</p>
+								<time class="latest-reviews__date" datetime="2014-03-28T10:19">28 марта 2014, 10:19</time>
+							</div>
+							<div class="latest-reviews__text">
+								Сайт отличный, всё просто и легко. Минимальная комиссия, а так же быстрый обмен в течении минуты. Огромной спасибо!
+							</div>
+						</div>
+					</div>
+					<a href="#" class="latest-reviews__add">Оставить отзыв</a>
+				</div>
+			</div>
+		</div>
+		<div class="why-us">
+			<div class="container">
+				<p class="why-us__title">Почему выбирают нас?</p>
+				<div class="why-us__items">
+					<div class="why-us__item why-us__item--garantee">
+						<p class="why-us__item-title">Гарантия перевода</p>
+						<div class="why-us__item-descr">Быстрая обработка заявок, стабильные резервы.</div>
+					</div>
+					<div class="why-us__item why-us__item--support">
+						<p class="why-us__item-title">Техническая поддержка</p>
+						<div class="why-us__item-descr">Наши операторы всегда готовы проконсультировать по всем вопросам</div>
+					</div>
+					<div class="why-us__item why-us__item--security">
+						<p class="why-us__item-title">Защита информации</p>
+						<div class="why-us__item-descr">Мы не распространяем данные об операциях наших клиентов.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+//= template/footer.html

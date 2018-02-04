@@ -35,6 +35,7 @@ body
 	display -o-flex
 	display flex
 	flex-direction column
+	overflow-x hidden
 	color #000
 	font normal 1.4rem/1.3 G
 	background-color #fff
@@ -573,7 +574,27 @@ a
 					padding 4px 30px 4px 18px
 				&:last-child
 					border-bottom 0
-			&:hover
+			^[0]__col--give &
+				&:hover
+					& ^[0]-currency__item
+						&-icon
+						&-value
+						&-name
+							position relative
+							color #fff
+					&:before
+						animation fadeIn .2s
+						position absolute
+						top 0
+						right 0
+						bottom 0
+						left 0
+						z-index 0
+						background-image linear-gradient(to right, #352b67, #5a4ca0)
+						content ''
+			^[0]__col--get &
+				&:hover
+					background-color #f2f0f0
 			&--active
 				color #fff
 				&:before

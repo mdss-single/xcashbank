@@ -1,5 +1,6 @@
 /*  <vars>  */
 $desktop = "screen and (min-width:1200px)";
+$desktop-big = "screen and (min-width:1500px)";
 $phone-land = "screen and (min-width:768px)";
 $phone = "screen and (min-width:480px)";
 /*  </vars>  */
@@ -243,36 +244,8 @@ $phone = "screen and (min-width:480px)";
 			z-index 200
 			transform translateY(-50%)
 		&:before
-			left calc(100% + 20px)
+			left -184px
 			width 160px
-			color #fff
-			font-size 1.2rem
-			line-height 1.4rem
-			background-image linear-gradient(to right, #352b67, #5a4ca0)
-			border-radius 3px
-			padding 12px 15px
-			content attr(data-tooltip)
-		&:after
-			left calc(100% + 8px)
-			width 0
-			height 0
-			border solid transparent
-			border-width 8px 14px 8px 0
-			border-right-color #352b67
-			content ''
-[data-tooltip-left]
-	cursor pointer
-	&:hover
-		&:before
-		&:after
-			animation fadeIn .3s
-			position absolute
-			top 50%
-			z-index 200
-			transform translateY(-50%)
-		&:before
-			left -200px
-			width 186px
 			color #fff
 			font-size 1.2rem
 			line-height 1.4rem
@@ -280,15 +253,51 @@ $phone = "screen and (min-width:480px)";
 			background-image linear-gradient(to right, #352b67, #5a4ca0)
 			border-radius 3px
 			padding 12px 15px
-			content attr(data-tooltip-left)
+			content attr(data-tooltip)
+			@media $desktop-big
+				left calc(100% + 20px)
 		&:after
-			left -14px
+			left -24px
 			width 0
 			height 0
 			border solid transparent
 			border-width 8px 0 8px 14px
 			border-left-color #5a4ca0
 			content ''
+			@media $desktop-big
+				left calc(100% + 8px)
+				border-width 8px 14px 8px 0
+				border-right-color #352b67
+[data-tooltip-left]
+	cursor pointer
+	@media $desktop
+		&:hover
+			&:before
+			&:after
+				animation fadeIn .3s
+				position absolute
+				top 50%
+				z-index 200
+				transform translateY(-50%)
+			&:before
+				left -200px
+				width 186px
+				color #fff
+				font-size 1.2rem
+				line-height 1.4rem
+				text-align left
+				background-image linear-gradient(to right, #352b67, #5a4ca0)
+				border-radius 3px
+				padding 12px 15px
+				content attr(data-tooltip-left)
+			&:after
+				left -14px
+				width 0
+				height 0
+				border solid transparent
+				border-width 8px 0 8px 14px
+				border-left-color #5a4ca0
+				content ''
 /*  </tooltips>  */
 
 /*  <animations>  */

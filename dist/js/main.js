@@ -34,9 +34,6 @@
 				}
 			});
 		} else {
-			// destroy rates carousel
-			if ($('.flickity-enabled').length) $('.js-header-rates').flickity('destroy');
-			
 			// load active payment system
 			$('.exchange__col .exchange-currency__item--active').click();
 

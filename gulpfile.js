@@ -100,12 +100,42 @@ gulp.task('img:build', function() {
 	gulp.src(path.src.img)
 		.pipe(gulp.dest(path.build.img));
 });
+gulp.task('style-no-map:build', function() {
+	gulp.src(path.src.css)
+		.pipe(plumber())
+		.pipe(stylus())
+		.pipe(cssMin({compatibility: 'ie8'}))
+		.pipe(concat('main.css'))
+		.pipe(gulp.dest(path.build.css))
+		.pipe(reload({stream: true}));
+});
+gulp.task('cssLibs-no-map:build', function() {
+	gulp.src(path.src.cssLibs)
+		.pipe(concat('plugins.css'))
+		.pipe(cssMin({compatibility: 'ie8'}))
+		.pipe(gulp.dest(path.build.css));
+});
+gulp.task('jsLibs-no-map:build', function() {
+	gulp.src(path.src.jsLibs)
+		.pipe(uglify())
+		.pipe(concat('plugins.js'))
+		.pipe(gulp.dest(path.build.js));
+});
 gulp.task('build', [
 	'html:build',
 	'js:build',
 	'style:build',
 	'cssLibs:build',
 	'jsLibs:build',
+	'img:build',
+	'fonts:build'
+]);
+gulp.task('build-final', [
+	'html:build',
+	'js:build',
+	'style-no-map:build',
+	'cssLibs-no-map:build',
+	'jsLibs-no-map:build',
 	'img:build',
 	'fonts:build'
 ]);

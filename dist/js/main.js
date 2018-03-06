@@ -34,6 +34,9 @@
 				}
 			});
 		} else {
+			// destroy flickity
+			if ($('.js-header-rates').flickity()) $('.js-header-rates').flickity('destroy');
+
 			// load active payment system
 			$('.exchange__col .exchange-currency__item--active').click();
 
